@@ -1,0 +1,222 @@
+@import url('tailwindcss');
+@import url('tw-animate-css');
+@import url('shadcn/tailwind.css');
+
+@custom-variant dark (&:is(.dark *));
+
+@theme inline {
+	/* ── Radius — thang của DESIGN.md ────────────────────────────────
+	   Đặt giá trị tuyệt đối, KHÔNG dẫn xuất bằng calc(var(--radius) * n)
+	   như bản shadcn sinh ra: cách đó cho sm 7.2px / md 9.6px / xl 16.8px,
+	   lệch khỏi thang 6/8/16 mà DESIGN.md quy định.                        */
+	--radius-xs: 4px; /* chip, status badge */
+	--radius-sm: 6px; /* inline tag */
+	--radius-md: 8px; /* button, input */
+	--radius-lg: 12px; /* card */
+	--radius-xl: 16px; /* panel lớn */
+	--radius-2xl: 24px; /* CTA banner */
+	--radius-3xl: 32px;
+	--radius-4xl: 40px;
+
+	/* KHÔNG khai báo --spacing-<tên chữ> ở đây.
+	   Tailwind v4 dùng --spacing-* cho MỌI utility cùng tên, nên
+	   --spacing-md: 16px sẽ biến max-w-md thành 16px thay vì 448px,
+	   kéo theo dialog/sheet/tooltip co lại vài pixel.
+	   Spacing scale của DESIGN.md đều là bội số 4 nên đã có sẵn:
+	   4px=1 · 8px=2 · 12px=3 · 16px=4 · 24px=6 · 32px=8 · 48px=12 · 96px=24 */
+
+	--color-background: var(--background);
+	--color-foreground: var(--foreground);
+	--font-sans: var(--font-geist-sans);
+	--font-mono: var(--font-geist-mono);
+	--font-heading: var(--font-geist-sans);
+	--color-sidebar-ring: var(--sidebar-ring);
+	--color-sidebar-border: var(--sidebar-border);
+	--color-sidebar-accent-foreground: var(--sidebar-accent-foreground);
+	--color-sidebar-accent: var(--sidebar-accent);
+	--color-sidebar-primary-foreground: var(--sidebar-primary-foreground);
+	--color-sidebar-primary: var(--sidebar-primary);
+	--color-sidebar-foreground: var(--sidebar-foreground);
+	--color-sidebar: var(--sidebar);
+	--color-chart-5: var(--chart-5);
+	--color-chart-4: var(--chart-4);
+	--color-chart-3: var(--chart-3);
+	--color-chart-2: var(--chart-2);
+	--color-chart-1: var(--chart-1);
+	--color-ring: var(--ring);
+	--color-input: var(--input);
+	--color-border: var(--border);
+	--color-destructive: var(--destructive);
+	--color-accent-foreground: var(--accent-foreground);
+	--color-accent: var(--accent);
+	--color-muted-foreground: var(--muted-foreground);
+	--color-muted: var(--muted);
+	--color-secondary-foreground: var(--secondary-foreground);
+	--color-secondary: var(--secondary);
+	--color-primary-foreground: var(--primary-foreground);
+	--color-primary: var(--primary);
+	/* Token riêng của DESIGN.md, shadcn không sinh sẵn */
+	--color-primary-hover: var(--primary-hover);
+	--color-ink-muted: var(--ink-muted);
+	--color-hairline-strong: var(--hairline-strong);
+	--color-hairline-tertiary: var(--hairline-tertiary);
+	--color-success: var(--success);
+	--color-success-foreground: var(--success-foreground);
+	--color-popover-foreground: var(--popover-foreground);
+	--color-popover: var(--popover);
+	--color-card-foreground: var(--card-foreground);
+	--color-card: var(--card);
+}
+
+:root {
+	/* ── Light mode: dùng bộ inverse-* của DESIGN.md ────────────────── */
+	--background: #ffffff; /* inverse-canvas */
+	--foreground: #000000; /* inverse-ink */
+	--card: #f5f6f6; /* inverse-surface-1 */
+	--card-foreground: #000000;
+	--popover: #f6f7f7; /* inverse-surface-2 */
+	--popover-foreground: #000000;
+
+	--primary: #5e6ad2; /* lavender-blue — accent duy nhất */
+	--primary-foreground: #ffffff; /* on-primary */
+	--secondary: #f5f6f6;
+	--secondary-foreground: #000000;
+	--muted: #f6f7f7;
+	--muted-foreground: #62666d; /* ink-tertiary */
+	--accent: #f5f6f6;
+	--accent-foreground: #5e6ad2;
+
+	--primary-hover: #828fff; /* lavender sáng hơn khi hover — DESIGN.md */
+	--ink-muted: #3f4348; /* ink-muted đảo cho nền sáng, giữ đủ tương phản */
+	--hairline-strong: #d4d6d9;
+	--hairline-tertiary: #ebecee;
+	--success: #27a644; /* semantic-success — màu semantic DUY NHẤT */
+	--success-foreground: #ffffff;
+
+	--destructive: oklch(0.577 0.245 27.325);
+	--border: #e3e4e6;
+	--input: #e3e4e6;
+	--ring: #5e69d1; /* primary-focus */
+
+	/* Không có palette chart riêng trong DESIGN.md — dẫn xuất từ lavender */
+	--chart-1: #5e6ad2;
+	--chart-2: #828fff;
+	--chart-3: #7a7fad; /* brand-secure */
+	--chart-4: #8a8f98; /* ink-subtle */
+	--chart-5: #62666d; /* ink-tertiary */
+
+	--radius: 12px; /* rounded.lg — card; button/input dùng rounded.md 8px */
+
+	--sidebar: #f5f6f6;
+	--sidebar-foreground: #000000;
+	--sidebar-primary: #5e6ad2;
+	--sidebar-primary-foreground: #ffffff;
+	--sidebar-accent: #f6f7f7;
+	--sidebar-accent-foreground: #5e6ad2;
+	--sidebar-border: #e3e4e6;
+	--sidebar-ring: #5e69d1;
+}
+
+.dark {
+	/* ── Dark mode: bộ token chính của DESIGN.md ───────────────────── */
+	--background: #010102; /* canvas — KHÔNG dùng #000 true black */
+	--foreground: #f7f8f8; /* ink */
+	--card: #0f1011; /* surface-1 */
+	--card-foreground: #f7f8f8;
+	--popover: #141516; /* surface-2 */
+	--popover-foreground: #f7f8f8;
+
+	--primary: #5e6ad2; /* lavender-blue */
+	--primary-foreground: #ffffff;
+	--secondary: #141516; /* surface-2 */
+	--secondary-foreground: #f7f8f8;
+	--muted: #18191a; /* surface-3 */
+	--muted-foreground: #8a8f98; /* ink-subtle */
+	--accent: #191a1b; /* surface-4 */
+	--accent-foreground: #f7f8f8;
+
+	--primary-hover: #828fff; /* lavender sáng hơn khi hover — DESIGN.md */
+	--ink-muted: #d0d6e0; /* text cấp 2 trên panel */
+	--hairline-strong: #34343a;
+	--hairline-tertiary: #3e3e44; /* viền cho surface lồng nhau */
+	--success: #27a644; /* semantic-success — màu semantic DUY NHẤT */
+	--success-foreground: #ffffff;
+
+	--destructive: oklch(0.704 0.191 22.216);
+	--border: #23252a; /* hairline */
+	--input: #34343a; /* hairline-strong */
+	--ring: #5e69d1; /* primary-focus */
+
+	--chart-1: #5e6ad2;
+	--chart-2: #828fff;
+	--chart-3: #7a7fad;
+	--chart-4: #8a8f98;
+	--chart-5: #62666d;
+
+	--sidebar: #0f1011;
+	--sidebar-foreground: #f7f8f8;
+	--sidebar-primary: #5e6ad2;
+	--sidebar-primary-foreground: #ffffff;
+	--sidebar-accent: #18191a;
+	--sidebar-accent-foreground: #f7f8f8;
+	--sidebar-border: #23252a;
+	--sidebar-ring: #5e69d1;
+}
+
+@layer base {
+	* {
+		@apply border-border outline-ring/50;
+	}
+	body {
+		@apply bg-background text-foreground;
+	}
+	html {
+		@apply font-sans;
+	}
+}
+
+// ─────────────────────────────────────────────────────────────
+// SCSS dùng chung
+//
+// Phần dưới đây là SCSS thật: biến, nesting, mixin, @media lồng nhau.
+// Ưu tiên Tailwind cho mọi thứ; chỉ viết SCSS khi Tailwind diễn đạt
+// dài dòng hoặc bất khả (animation nhiều bước, selector phức tạp).
+//
+// Lưu ý: 3 dòng @import đầu file BẮT BUỘC bọc url(), nếu không Sass sẽ
+// cố tìm file .scss trên đĩa và báo "Can't find stylesheet to import".
+// ─────────────────────────────────────────────────────────────
+
+$spinner-size: 2rem;
+$spinner-border: 2px;
+$spinner-duration: 0.7s;
+
+@mixin center-screen {
+	display: flex;
+	min-height: 100vh;
+	align-items: center;
+	justify-content: center;
+}
+
+.splash-screen {
+	@include center-screen;
+
+	.splash-spinner {
+		width: $spinner-size;
+		height: $spinner-size;
+		// Dùng lại design token của Tailwind nên tự đổi theo light/dark mode
+		border: $spinner-border solid var(--muted);
+		border-top-color: var(--primary);
+		border-radius: 50%;
+		animation: splash-spin $spinner-duration linear infinite;
+
+		@media (prefers-reduced-motion: reduce) {
+			animation-duration: 2s;
+		}
+	}
+}
+
+@keyframes splash-spin {
+	to {
+		transform: rotate(360deg);
+	}
+}

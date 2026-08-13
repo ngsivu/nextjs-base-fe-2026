@@ -7,7 +7,7 @@ export default function GlobalError({ error, reset }: { error: Error & { digest?
 	return (
 		<html lang="vi">
 			<body>
-				<main style={{ display: 'grid', placeItems: 'center', minHeight: '100vh', gap: '1rem' }}>
+				<main style={{ display: 'grid', placeItems: 'center', minHeight: '100dvh', gap: '1rem' }}>
 					<h2>Ứng dụng gặp sự cố</h2>
 					<p>{error.message}</p>
 					<button onClick={reset}>Tải lại</button>

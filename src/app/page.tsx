@@ -1,5 +1,5 @@
 import Link from 'next/link';
-import { FadeIn } from '@/components/FadeIn';
+import { FadeIn } from '@/components/layout/FadeIn';
 import { DemoLinks } from '@/components/home/DemoLinks';
 import { FeatureGrid } from '@/components/home/FeatureGrid';
 import { FileTree } from '@/components/home/FileTree';
@@ -21,9 +21,7 @@ export default function Home() {
 				<section className="gap-12 py-16 sm:py-24 lg:grid-cols-2 grid items-center">
 					<FadeIn>
 						<div>
-							<h1 className="font-semibold sm:text-[56px] text-[40px] leading-[1.1] tracking-[-1.8px]">
-								Base FE
-							</h1>
+							<h1 className="sm:text-display-lg text-display-md">Base FE</h1>
 							<p className="mt-5 text-lg leading-7 max-w-md text-muted-foreground">
 								Next.js starter đã dựng sẵn HTTP layer, state management, form validation và design
 								system. Trỏ sang API của bạn là bắt đầu viết tính năng được.

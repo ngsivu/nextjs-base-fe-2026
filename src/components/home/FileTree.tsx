@@ -45,7 +45,7 @@ export function FileTree() {
 				<span className="ml-2 text-xs font-mono text-muted-foreground">base-fe</span>
 			</div>
 
-			<ul className="p-2 leading-6 font-mono text-[13px]" onMouseLeave={() => setActive(null)}>
+			<ul className="p-2 leading-6 font-mono text-caption" onMouseLeave={() => setActive(null)}>
 				{TREE.map((node, index) => (
 					<li key={node.name + index}>
 						<div

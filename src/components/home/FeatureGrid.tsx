@@ -36,7 +36,7 @@ export function FeatureGrid() {
 		<div className="gap-4 sm:grid-cols-2 lg:grid-cols-3 grid">
 			{FEATURES.map((feature) => (
 				<article key={feature.title} className="p-6 rounded-lg border border-border bg-card">
-					<h3 className="font-medium text-[22px] tracking-[-0.4px]">{feature.title}</h3>
+					<h3 className="text-section">{feature.title}</h3>
 					<p className="mt-3 text-sm leading-6 text-muted-foreground">{feature.body}</p>
 					<p className="mt-4 text-xs font-mono text-muted-foreground">{feature.libs}</p>
 				</article>

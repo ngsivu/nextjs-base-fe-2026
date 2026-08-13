@@ -9,7 +9,7 @@ export default function Error({ error, reset }: { error: Error & { digest?: stri
 	}, [error]);
 
 	return (
-		<main className="gap-4 p-6 flex min-h-screen flex-col items-center justify-center">
+		<main className="gap-4 p-6 flex min-h-[100dvh] flex-col items-center justify-center">
 			<h2 className="text-xl font-semibold">Đã có lỗi xảy ra</h2>
 			<p className="text-sm text-muted-foreground">{error.message}</p>
 			<Button onClick={reset}>Thử lại</Button>

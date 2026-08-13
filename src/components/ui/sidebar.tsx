@@ -225,7 +225,7 @@ function Sidebar({
 				<div
 					data-sidebar="sidebar"
 					data-slot="sidebar-inner"
-					className="group-data-[variant=floating]:shadow-sm flex size-full flex-col bg-sidebar group-data-[variant=floating]:rounded-lg group-data-[variant=floating]:ring-1 group-data-[variant=floating]:ring-sidebar-border"
+					className="flex size-full flex-col bg-sidebar group-data-[variant=floating]:rounded-lg group-data-[variant=floating]:shadow-sm group-data-[variant=floating]:ring-1 group-data-[variant=floating]:ring-sidebar-border"
 				>
 					{children}
 				</div>
@@ -268,7 +268,7 @@ function SidebarRail({ className, ...props }: React.ComponentProps<'button'>) {
 			onClick={toggleSidebar}
 			title="Toggle Sidebar"
 			className={cn(
-				'inset-y-0 w-4 group-data-[side=left]:-right-4 group-data-[side=right]:left-0 after:inset-y-0 sm:flex absolute z-20 hidden transition-all ease-linear after:absolute after:start-1/2 after:w-[2px] hover:after:bg-sidebar-border ltr:-translate-x-1/2 rtl:-translate-x-1/2',
+				'inset-y-0 w-4 group-data-[side=left]:-right-4 group-data-[side=right]:left-0 after:inset-y-0 sm:flex after:w-0.5 absolute z-20 hidden transition-all ease-linear after:absolute after:start-1/2 hover:after:bg-sidebar-border ltr:-translate-x-1/2 rtl:-translate-x-1/2',
 				'in-data-[side=left]:cursor-w-resize in-data-[side=right]:cursor-e-resize',
 				'[[data-side=left][data-state=collapsed]_&]:cursor-e-resize [[data-side=right][data-state=collapsed]_&]:cursor-w-resize',
 				'group-data-[collapsible=offcanvas]:translate-x-0 group-data-[collapsible=offcanvas]:after:left-full hover:group-data-[collapsible=offcanvas]:bg-sidebar',

@@ -19,7 +19,7 @@ export function QuickStart() {
 					<span className="text-xs font-mono text-muted-foreground">
 						{String(index + 1).padStart(2, '0')}
 					</span>
-					<code className="flex-1 overflow-x-auto font-mono text-[13px] whitespace-nowrap">{step.cmd}</code>
+					<code className="flex-1 overflow-x-auto font-mono text-caption whitespace-nowrap">{step.cmd}</code>
 					<span className="text-xs shrink-0 text-muted-foreground">{step.note}</span>
 				</div>
 			))}

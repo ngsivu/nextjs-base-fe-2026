@@ -71,16 +71,14 @@ export function ShowcaseNav({ groups }: { groups: NavGroup[] }) {
 			<div className="-mr-2 pr-2 flex-1 overflow-y-auto">
 				{filtered.map((group) => (
 					<div key={group.id} className="mb-6">
-						<p className="mb-2 font-medium text-[11px] tracking-[0.4px] text-muted-foreground uppercase">
-							{group.title}
-						</p>
+						<p className="mb-2 text-eyebrow text-muted-foreground uppercase">{group.title}</p>
 						<ul className="space-y-0.5">
 							{group.items.map((item) => (
 								<li key={item.id}>
 									<a
 										href={`#${item.id}`}
 										className={cn(
-											'px-2 py-1 block rounded-md font-mono text-[13px] transition-colors focus-visible:ring-2 focus-visible:ring-ring focus-visible:outline-none',
+											'px-2 py-1 block rounded-md font-mono text-caption transition-colors focus-visible:ring-2 focus-visible:ring-ring focus-visible:outline-none',
 											active === item.id
 												? 'bg-accent text-primary'
 												: 'text-muted-foreground hover:bg-accent/50 hover:text-foreground',

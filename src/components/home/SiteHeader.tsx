@@ -19,6 +19,12 @@ export function SiteHeader() {
 					>
 						Components
 					</Link>
+					<Link
+						href="/design"
+						className="px-3 py-1.5 text-sm rounded-md text-muted-foreground transition-colors hover:text-foreground focus-visible:ring-2 focus-visible:ring-ring focus-visible:outline-none"
+					>
+						Design
+					</Link>
 					<a
 						href="https://github.com/ngsivu/nextjs-base-fe-2026"
 						target="_blank"

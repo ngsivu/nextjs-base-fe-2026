@@ -17,7 +17,7 @@ function Switch({
 			data-slot="switch"
 			data-size={size}
 			className={cn(
-				'peer group/switch after:-inset-x-3 after:-inset-y-2 relative inline-flex shrink-0 items-center rounded-full border border-transparent transition-all outline-none after:absolute focus-visible:border-ring focus-visible:ring-3 focus-visible:ring-ring/50 aria-invalid:border-destructive aria-invalid:ring-3 aria-invalid:ring-destructive/20 data-checked:bg-primary data-disabled:cursor-not-allowed data-disabled:opacity-50 data-unchecked:bg-input data-[size=default]:h-[18.4px] data-[size=default]:w-[32px] data-[size=sm]:h-[14px] data-[size=sm]:w-[24px] dark:aria-invalid:border-destructive/50 dark:aria-invalid:ring-destructive/40 dark:data-unchecked:bg-input/80',
+				'peer group/switch after:-inset-x-3 after:-inset-y-2 data-[size=default]:h-4.5 data-[size=default]:w-8 data-[size=sm]:h-3.5 data-[size=sm]:w-6 relative inline-flex shrink-0 items-center rounded-full border border-transparent transition-all outline-none after:absolute focus-visible:border-ring focus-visible:ring-2 focus-visible:ring-ring/50 aria-invalid:border-destructive aria-invalid:ring-2 aria-invalid:ring-destructive/20 data-checked:bg-primary data-disabled:cursor-not-allowed data-disabled:opacity-50 data-unchecked:bg-input dark:aria-invalid:border-destructive/50 dark:aria-invalid:ring-destructive/40 dark:data-unchecked:bg-input/80',
 				className,
 			)}
 			{...props}

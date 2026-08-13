@@ -9,8 +9,9 @@
 	   Đặt giá trị tuyệt đối, KHÔNG dẫn xuất bằng calc(var(--radius) * n)
 	   như bản shadcn sinh ra: cách đó cho sm 7.2px / md 9.6px / xl 16.8px,
 	   lệch khỏi thang 6/8/16 mà DESIGN.md quy định.                        */
-	--radius-xs: 4px; /* chip, status badge */
-	--radius-sm: 6px; /* inline tag */
+	--radius-2xs: 2px; /* ô màu nhỏ dưới 12px: chú giải biểu đồ, mũi tên tooltip */
+	--radius-xs: 4px; /* chip nhỏ, hàng bảng */
+	--radius-sm: 6px; /* status badge, tag inline */
 	--radius-md: 8px; /* button, input */
 	--radius-lg: 12px; /* card */
 	--radius-xl: 16px; /* panel lớn */
@@ -18,12 +19,127 @@
 	--radius-3xl: 32px;
 	--radius-4xl: 40px;
 
+	/* ── Thang chữ ──────────────────────────────────────────────────
+	   MỌI giá trị là số nguyên chẵn. Line-height đặt bằng px trên lưới 4px
+	   thay vì tỷ lệ thập phân (1.15, 1.55…) nên chữ luôn khớp lưới dọc.
+	   Letter-spacing chỉ nhận -1px, 0, +1px — không có giá trị thập phân.
+
+	   Dùng qua utility: text-display-lg, text-body, text-caption…
+	   Mỗi token đã gói sẵn size + line-height + tracking + weight, nên
+	   KHÔNG viết cỡ chữ, line-height hay tracking bằng giá trị tuỳ ý
+	   trong ngoặc vuông nữa. Đó chính là nguồn gốc của những giá trị lẻ.  */
+	--text-display-lg: 40px;
+	--text-display-lg--line-height: 48px;
+	--text-display-lg--letter-spacing: -1px;
+	--text-display-lg--font-weight: 600;
+
+	--text-display-md: 32px;
+	--text-display-md--line-height: 40px;
+	--text-display-md--letter-spacing: -1px;
+	--text-display-md--font-weight: 600;
+
+	--text-headline: 24px;
+	--text-headline--line-height: 32px;
+	--text-headline--letter-spacing: -1px;
+	--text-headline--font-weight: 600;
+
+	--text-section: 20px;
+	--text-section--line-height: 28px;
+	--text-section--letter-spacing: 0px;
+	--text-section--font-weight: 600;
+
+	--text-title: 18px;
+	--text-title--line-height: 24px;
+	--text-title--letter-spacing: 0px;
+	--text-title--font-weight: 500;
+
+	--text-body-lg: 16px;
+	--text-body-lg--line-height: 24px;
+	--text-body-lg--letter-spacing: 0px;
+	--text-body-lg--font-weight: 400;
+
+	--text-body: 14px;
+	--text-body--line-height: 20px;
+	--text-body--letter-spacing: 0px;
+	--text-body--font-weight: 400;
+
+	--text-caption: 12px;
+	--text-caption--line-height: 16px;
+	--text-caption--letter-spacing: 0px;
+	--text-caption--font-weight: 400;
+
+	--text-eyebrow: 12px;
+	--text-eyebrow--line-height: 16px;
+	--text-eyebrow--letter-spacing: 1px;
+	--text-eyebrow--font-weight: 500;
+
+	/* ── Kéo thang mặc định của Tailwind về đúng thang trên ───────────
+	   Các file trong components/ui/ do shadcn sinh ra dùng text-sm, text-xs…
+	   May mắn là 5/8 bậc đã trùng sẵn (xs 12/16 · sm 14/20 · base 16/24 ·
+	   xl 20/28 · 2xl 24/32). Chỉ 3 bậc lệch, chỉnh ở đây thì mọi file
+	   shadcn tự rơi đúng thang mà không phải sửa tay từng file.
+
+	   Code của app vẫn dùng token ngữ nghĩa (text-body, text-caption…);
+	   thang chữ số này chỉ để đỡ cho code shadcn sinh sẵn.                */
+	--text-lg--line-height: 24px; /* Tailwind mặc định 28px */
+	--text-3xl: 32px; /* Tailwind mặc định 30px */
+	--text-3xl--line-height: 40px; /* Tailwind mặc định 36px */
+	--text-4xl: 40px; /* Tailwind mặc định 36px */
+	--text-4xl--line-height: 48px; /* Tailwind mặc định 40px */
+	--text-2xl--letter-spacing: -1px;
+	--text-3xl--letter-spacing: -1px;
+	--text-4xl--letter-spacing: -1px;
+
+	/* Tracking chỉ có ba giá trị: -1px, 0, +1px. Thang mặc định của Tailwind
+	   tính theo em nên ra số thập phân (tracking-tight = -0.025em = -0.35px ở
+	   cỡ 14px). Ánh xạ hết về ba giá trị trên để code shadcn không sinh ra
+	   giá trị lẻ.                                                            */
+	--tracking-tighter: -1px;
+	--tracking-tight: -1px;
+	--tracking-normal: 0px;
+	--tracking-wide: 1px;
+	--tracking-wider: 1px;
+	--tracking-widest: 1px;
+
+	/* ── Đổ bóng — CHỈ dành cho lớp nổi ──────────────────────────────
+	   Bề mặt nằm trong luồng (card, panel, tile) KHÔNG đổ bóng, phân cấp
+	   bằng bậc surface và viền hairline. Nhưng lớp nổi (popover, dropdown,
+	   tooltip, dialog, sheet) cần tách khỏi nội dung bên dưới, mà trên nền
+	   trắng thì một đường viền 1px không đủ làm việc đó.
+
+	   Bóng ở đây nhuộm theo hue của mực chứ không dùng đen thuần, và rất
+	   tiết chế. Định nghĩa đè lên thang của Tailwind nên các class shadow-md,
+	   shadow-lg, shadow-xl có sẵn trong file shadcn tự nhận giá trị này.   */
+	--shadow-2xs: 0 1px 1px 0 rgb(var(--shadow-rgb) / calc(0.03 * var(--shadow-strength)));
+	--shadow-xs: 0 1px 2px 0 rgb(var(--shadow-rgb) / calc(0.04 * var(--shadow-strength)));
+	--shadow-sm: 0 2px 4px -1px rgb(var(--shadow-rgb) / calc(0.06 * var(--shadow-strength)));
+	--shadow-md: 0 4px 12px -2px rgb(var(--shadow-rgb) / calc(0.08 * var(--shadow-strength)));
+	--shadow-lg: 0 8px 24px -4px rgb(var(--shadow-rgb) / calc(0.1 * var(--shadow-strength)));
+	--shadow-xl: 0 12px 32px -8px rgb(var(--shadow-rgb) / calc(0.12 * var(--shadow-strength)));
+	--shadow-2xl: 0 16px 40px -12px rgb(var(--shadow-rgb) / calc(0.14 * var(--shadow-strength)));
+
 	/* KHÔNG khai báo --spacing-<tên chữ> ở đây.
 	   Tailwind v4 dùng --spacing-* cho MỌI utility cùng tên, nên
 	   --spacing-md: 16px sẽ biến max-w-md thành 16px thay vì 448px,
 	   kéo theo dialog/sheet/tooltip co lại vài pixel.
 	   Spacing scale của DESIGN.md đều là bội số 4 nên đã có sẵn:
-	   4px=1 · 8px=2 · 12px=3 · 16px=4 · 24px=6 · 32px=8 · 48px=12 · 96px=24 */
+	   4px=1 · 8px=2 · 12px=3 · 16px=4 · 24px=6 · 32px=8 · 48px=12 · 64px=16 */
+
+	/* ── Thang navy — nguồn của mọi màu thương hiệu ──────────────────
+	   Anchor là navy-800 #203868, hue 220°. Thang cố định, KHÔNG đổi
+	   theo theme: light và dark chỉ chọn bậc khác nhau từ cùng thang này.
+	   Dùng trực tiếp qua utility: bg-navy-800, text-navy-300, ...        */
+	--color-navy-50: #eff3fb;
+	--color-navy-100: #dbe4f5;
+	--color-navy-200: #b8c9ea;
+	--color-navy-300: #8aa5db;
+	--color-navy-400: #5b81cd;
+	--color-navy-500: #3a65bb;
+	--color-navy-600: #30549c;
+	--color-navy-700: #284581;
+	--color-navy-800: #203868; /* ← brand anchor */
+	--color-navy-900: #182a4e;
+	--color-navy-950: #0f1b33;
 
 	--color-background: var(--background);
 	--color-foreground: var(--foreground);
@@ -55,13 +171,39 @@
 	--color-secondary: var(--secondary);
 	--color-primary-foreground: var(--primary-foreground);
 	--color-primary: var(--primary);
+	/* Primary khi dùng làm màu CHỮ. Tách khỏi --primary vì hai vai trò kéo ngược
+	   nhau: nền nút phải đủ TỐI để chữ trắng đọc được, còn chữ trên nền tối lại
+	   phải đủ SÁNG. Một token không gánh được cả hai. */
+	--color-primary-text: var(--primary-text);
+
+	/* Nhận diện thương hiệu — BẤT BIẾN giữa hai theme, khác --primary. */
+	--color-brand: var(--brand);
+	--color-brand-foreground: var(--brand-foreground);
+	--color-brand-edge: var(--brand-edge);
 	/* Token riêng của DESIGN.md, shadcn không sinh sẵn */
 	--color-primary-hover: var(--primary-hover);
+	--color-primary-active: var(--primary-active);
 	--color-ink-muted: var(--ink-muted);
 	--color-hairline-strong: var(--hairline-strong);
 	--color-hairline-tertiary: var(--hairline-tertiary);
+	/* Bộ semantic cho trạng thái nghiệp vụ — xem DESIGN.md § Semantic */
 	--color-success: var(--success);
 	--color-success-foreground: var(--success-foreground);
+	--color-success-subtle: var(--success-subtle);
+	--color-warning: var(--warning);
+	--color-warning-foreground: var(--warning-foreground);
+	--color-warning-subtle: var(--warning-subtle);
+	--color-danger: var(--danger);
+	--color-danger-foreground: var(--danger-foreground);
+	--color-danger-subtle: var(--danger-subtle);
+	--color-info: var(--info);
+	--color-info-foreground: var(--info-foreground);
+	--color-info-subtle: var(--info-subtle);
+	/* Thang ordinal cho tiến trình nhiều bước — xem DESIGN.md § Visualize */
+	--color-stage-1: var(--stage-1);
+	--color-stage-2: var(--stage-2);
+	--color-stage-3: var(--stage-3);
+	--color-stage-4: var(--stage-4);
 	--color-popover-foreground: var(--popover-foreground);
 	--color-popover: var(--popover);
 	--color-card-foreground: var(--card-foreground);
@@ -69,98 +211,167 @@
 }
 
 :root {
-	/* ── Light mode: dùng bộ inverse-* của DESIGN.md ────────────────── */
-	--background: #ffffff; /* inverse-canvas */
-	--foreground: #000000; /* inverse-ink */
-	--card: #f5f6f6; /* inverse-surface-1 */
-	--card-foreground: #000000;
-	--popover: #f6f7f7; /* inverse-surface-2 */
-	--popover-foreground: #000000;
+	/* ── Light mode — theme mặc định của Base FE ───────────────────
+	   Nền trung tính lệch navy: mọi bậc xám đều mang hue 220 để bản ghi
+	   và chrome nằm cùng một họ màu với thương hiệu.                     */
+	--background: #ffffff; /* canvas */
+	--foreground: #0b1220; /* ink */
+	--card: #f4f6fa; /* surface-1 */
+	--card-foreground: #0b1220;
+	--popover: #ffffff; /* lớp nổi - đổ bóng theo thang --shadow-* ở trên */
+	--popover-foreground: #0b1220;
 
-	--primary: #5e6ad2; /* lavender-blue — accent duy nhất */
-	--primary-foreground: #ffffff; /* on-primary */
-	--secondary: #f5f6f6;
-	--secondary-foreground: #000000;
-	--muted: #f6f7f7;
-	--muted-foreground: #62666d; /* ink-tertiary */
-	--accent: #f5f6f6;
-	--accent-foreground: #5e6ad2;
+	/* Nhận diện thương hiệu — GIỐNG HỆT ở dark mode. Logo không phải điều
+	   khiển nên không chịu ràng buộc 3:1 như nút bấm. */
+	--brand: #203868; /* navy-800 — màu thương hiệu, bất biến */
+	--brand-foreground: #ffffff; /* 11.5:1 trên brand */
+	--brand-edge: transparent; /* nền sáng đã đủ tách, không cần viền */
 
-	--primary-hover: #828fff; /* lavender sáng hơn khi hover — DESIGN.md */
-	--ink-muted: #3f4348; /* ink-muted đảo cho nền sáng, giữ đủ tương phản */
-	--hairline-strong: #d4d6d9;
-	--hairline-tertiary: #ebecee;
-	--success: #27a644; /* semantic-success — màu semantic DUY NHẤT */
+	--primary: #203868; /* navy-800 — accent DUY NHẤT */
+	--primary-foreground: #ffffff; /* 11.5:1 trên primary */
+	--primary-text: #203868; /* navy-800 — 11.5:1 trên canvas trắng */
+	--primary-hover: #284581; /* navy-700 — sáng lên khi hover, 9.3:1 */
+	--primary-active: #182a4e; /* navy-900 — chìm xuống khi nhấn */
+	--secondary: #edf1f7; /* surface-2 */
+	--secondary-foreground: #0b1220;
+	--muted: #f4f6fa; /* surface-1 */
+	--muted-foreground: #5b6679; /* ink-subtle — 5.8:1 trên canvas */
+	--accent: #e6ebf3; /* surface-3 */
+	--accent-foreground: #203868;
+
+	--ink-muted: #3a4356; /* text cấp 2 — 9.9:1 trên canvas */
+	--hairline-strong: #c3ccdb;
+	--hairline-tertiary: #eaeef5;
+
+	/* Semantic — chỉ dùng cho trạng thái nghiệp vụ thật, không trang trí */
+	--success: #15683f;
 	--success-foreground: #ffffff;
+	--success-subtle: #e3f3ea; /* 5.9:1 với --success */
+	--warning: #8a5a00;
+	--warning-foreground: #ffffff;
+	--warning-subtle: #fbf0dc; /* 5.3:1 với --warning */
+	--danger: #a32219;
+	--danger-foreground: #ffffff;
+	--danger-subtle: #fbe6e4;
+	--info: #203868;
+	--info-foreground: #ffffff;
+	--info-subtle: #dbe4f5;
+	--destructive: #a32219; /* shadcn dùng tên này — giữ bằng --danger */
 
-	--destructive: oklch(0.577 0.245 27.325);
-	--border: #e3e4e6;
-	--input: #e3e4e6;
-	--ring: #5e69d1; /* primary-focus */
+	--border: #dde3ed; /* hairline */
+	--input: #c3ccdb; /* hairline-strong */
+	--ring: #30549c; /* navy-600 — focus ring, 7.3:1 trên canvas */
 
-	/* Không có palette chart riêng trong DESIGN.md — dẫn xuất từ lavender */
-	--chart-1: #5e6ad2;
-	--chart-2: #828fff;
-	--chart-3: #7a7fad; /* brand-secure */
-	--chart-4: #8a8f98; /* ink-subtle */
-	--chart-5: #62666d; /* ink-tertiary */
+	/* Bóng nhuộm theo hue của mực (#0b1220), không dùng đen thuần */
+	--shadow-rgb: 11 18 32;
+	--shadow-strength: 1;
+
+	/* Chart — bộ categorical đã qua validator kiểm định mù màu.
+	   Slot 1 là navy-500 để biểu đồ nối liền với thương hiệu.
+	   Light mode: chart-3/4/5 dưới 3:1 trên nền trắng → BẮT BUỘC kèm nhãn
+	   trực tiếp hoặc bảng dữ liệu (relief rule), không được để màu đứng một mình. */
+	--chart-1: #3a65bb;
+	--chart-2: #eb6834;
+	--chart-3: #1baf7a;
+	--chart-4: #eda100;
+	--chart-5: #e87ba4;
+
+	/* Ordinal — tiến trình nhiều bước, một hue, sáng → đậm */
+	--stage-1: #8aa5db;
+	--stage-2: #5b81cd;
+	--stage-3: #3a65bb;
+	--stage-4: #284581;
 
 	--radius: 12px; /* rounded.lg — card; button/input dùng rounded.md 8px */
 
-	--sidebar: #f5f6f6;
-	--sidebar-foreground: #000000;
-	--sidebar-primary: #5e6ad2;
+	--sidebar: #f4f6fa;
+	--sidebar-foreground: #0b1220;
+	--sidebar-primary: #203868;
 	--sidebar-primary-foreground: #ffffff;
-	--sidebar-accent: #f6f7f7;
-	--sidebar-accent-foreground: #5e6ad2;
-	--sidebar-border: #e3e4e6;
-	--sidebar-ring: #5e69d1;
+	--sidebar-accent: #e6ebf3;
+	--sidebar-accent-foreground: #203868;
+	--sidebar-border: #dde3ed;
+	--sidebar-ring: #30549c;
 }
 
 .dark {
-	/* ── Dark mode: bộ token chính của DESIGN.md ───────────────────── */
-	--background: #010102; /* canvas — KHÔNG dùng #000 true black */
-	--foreground: #f7f8f8; /* ink */
-	--card: #0f1011; /* surface-1 */
-	--card-foreground: #f7f8f8;
-	--popover: #141516; /* surface-2 */
-	--popover-foreground: #f7f8f8;
+	/* ── Dark mode ───────────────────────────────────────────────────
+	   Canvas là near-black LỆCH NAVY (#080b12), không phải xám trung tính
+	   và không phải #000 true black. Primary lên bậc navy-500 vì navy-800
+	   trên canvas tối chỉ đạt 1.7:1, dưới ngưỡng 3:1 cho ranh giới UI.    */
+	--background: #080b12; /* canvas */
+	--foreground: #eef1f7; /* ink */
+	--card: #0d121c; /* surface-1 */
+	--card-foreground: #eef1f7;
+	--popover: #121926; /* surface-2 */
+	--popover-foreground: #eef1f7;
 
-	--primary: #5e6ad2; /* lavender-blue */
+	/* Brand GIỮ NGUYÊN #203868 ở dark. Nó chỉ tách khỏi canvas 1.7:1 nên
+	   thêm viền hairline-strong để thấy cạnh; chữ trắng bên trong vẫn 11.5:1. */
+	--brand: #203868;
+	--brand-foreground: #ffffff;
+	--brand-edge: #374562; /* hairline-strong */
+
+	--primary: #3a65bb; /* navy-500 — 5.6:1 chữ trắng, 3.5:1 với canvas */
 	--primary-foreground: #ffffff;
-	--secondary: #141516; /* surface-2 */
-	--secondary-foreground: #f7f8f8;
-	--muted: #18191a; /* surface-3 */
-	--muted-foreground: #8a8f98; /* ink-subtle */
-	--accent: #191a1b; /* surface-4 */
-	--accent-foreground: #f7f8f8;
+	--primary-text: #8aa5db; /* navy-300 — 7.6:1 trên surface-1; navy-500 làm chữ chỉ 3.4:1 */
+	--primary-hover: #446fc5; /* 4.9:1 chữ trắng — navy-400 chỉ đạt 3.8:1 */
+	--primary-active: #30549c;
+	--secondary: #121926; /* surface-2 */
+	--secondary-foreground: #eef1f7;
+	--muted: #182030; /* surface-3 */
+	--muted-foreground: #8794ac; /* ink-subtle — 6.4:1 trên canvas */
+	--accent: #1d2739; /* surface-4 */
+	--accent-foreground: #eef1f7;
 
-	--primary-hover: #828fff; /* lavender sáng hơn khi hover — DESIGN.md */
-	--ink-muted: #d0d6e0; /* text cấp 2 trên panel */
-	--hairline-strong: #34343a;
-	--hairline-tertiary: #3e3e44; /* viền cho surface lồng nhau */
-	--success: #27a644; /* semantic-success — màu semantic DUY NHẤT */
-	--success-foreground: #ffffff;
+	--ink-muted: #c3ccdd; /* text cấp 2 trên panel */
+	--hairline-strong: #374562;
+	--hairline-tertiary: #1e2740;
 
-	--destructive: oklch(0.704 0.191 22.216);
-	--border: #23252a; /* hairline */
-	--input: #34343a; /* hairline-strong */
-	--ring: #5e69d1; /* primary-focus */
+	--success: #4fbe84;
+	--success-foreground: #06170f;
+	--success-subtle: #10261b; /* 6.9:1 với --success */
+	--warning: #d6a045;
+	--warning-foreground: #1a1305;
+	--warning-subtle: #2a2013; /* 6.8:1 với --warning */
+	--danger: #e9837a;
+	--danger-foreground: #2a0c09;
+	--danger-subtle: #2c1715; /* 6.4:1 với --danger */
+	--info: #8aa5db;
+	--info-foreground: #0f1b33;
+	--info-subtle: #16203a; /* 6.5:1 với --info */
+	--destructive: #e9837a;
 
-	--chart-1: #5e6ad2;
-	--chart-2: #828fff;
-	--chart-3: #7a7fad;
-	--chart-4: #8a8f98;
-	--chart-5: #62666d;
+	--border: #273249; /* hairline */
+	--input: #374562; /* hairline-strong */
+	--ring: #5b81cd; /* navy-400 — 5.1:1 trên canvas */
 
-	--sidebar: #0f1011;
-	--sidebar-foreground: #f7f8f8;
-	--sidebar-primary: #5e6ad2;
+	/* Trên nền tối bóng nhuộm màu gần như vô hình, nên chuyển sang đen
+	   thuần và tăng cường độ để lớp nổi vẫn tách khỏi nội dung bên dưới. */
+	--shadow-rgb: 0 0 0;
+	--shadow-strength: 2.5;
+
+	/* Bậc dark của cùng bộ categorical, đã validate riêng cho canvas tối.
+	   Cả 5 slot đều ≥ 3:1 nên không cần relief như light mode. */
+	--chart-1: #5b81cd;
+	--chart-2: #d95926;
+	--chart-3: #199e70;
+	--chart-4: #c98500;
+	--chart-5: #d55181;
+
+	--stage-1: #30549c;
+	--stage-2: #3a65bb;
+	--stage-3: #5b81cd;
+	--stage-4: #8aa5db;
+
+	--sidebar: #0d121c;
+	--sidebar-foreground: #eef1f7;
+	--sidebar-primary: #3a65bb;
 	--sidebar-primary-foreground: #ffffff;
-	--sidebar-accent: #18191a;
-	--sidebar-accent-foreground: #f7f8f8;
-	--sidebar-border: #23252a;
-	--sidebar-ring: #5e69d1;
+	--sidebar-accent: #1d2739;
+	--sidebar-accent-foreground: #eef1f7;
+	--sidebar-border: #273249;
+	--sidebar-ring: #5b81cd;
 }
 
 @layer base {
@@ -172,6 +383,30 @@
 	}
 	html {
 		@apply font-sans;
+	}
+
+	/* ── Vùng chạm trên thiết bị cảm ứng ─────────────────────────────
+	   Thang chiều cao của điều khiển (24/28/32/36px) là thang cho chuột,
+	   đúng với mật độ của app nghiệp vụ. Trên thiết bị trỏ thô thì các cỡ
+	   đó nhỏ hơn ngưỡng 44px, nên nâng lên tại đây thay vì làm giao diện
+	   chuột phình ra.
+
+	   Nút icon nâng cả hai chiều, nếu chỉ nâng chiều cao thì nó méo thành
+	   hình chữ nhật. */
+	@media (pointer: coarse) {
+		[data-slot='button']:not([data-size^='icon']),
+		[data-slot='input'],
+		[data-slot='textarea'],
+		[data-slot='native-select'],
+		[data-slot='select-trigger'],
+		[data-slot='combobox-trigger'] {
+			min-height: 44px;
+		}
+
+		[data-slot='button'][data-size^='icon'] {
+			min-width: 44px;
+			min-height: 44px;
+		}
 	}
 }
 
@@ -192,7 +427,7 @@ $spinner-duration: 0.7s;
 
 @mixin center-screen {
 	display: flex;
-	min-height: 100vh;
+	min-height: 100dvh;
 	align-items: center;
 	justify-content: center;
 }
@@ -209,8 +444,11 @@ $spinner-duration: 0.7s;
 		border-radius: 50%;
 		animation: splash-spin $spinner-duration linear infinite;
 
+		// Vòng lặp vô hạn phải DỪNG HẲN chứ không chỉ chạy chậm lại - đó là luật
+		// trong DESIGN.md. Vòng tròn vẫn còn cung màu primary ở cạnh trên nên
+		// người dùng vẫn thấy một chỉ báo tĩnh, không phải khoảng trống.
 		@media (prefers-reduced-motion: reduce) {
-			animation-duration: 2s;
+			animation: none;
 		}
 	}
 }
@@ -219,4 +457,12 @@ $spinner-duration: 0.7s;
 	to {
 		transform: rotate(360deg);
 	}
+}
+
+// ── Technical: số liệu luôn dùng chữ số đều cột ────────────────
+// Bảng dữ liệu, stat tile và mọi cột số phải thẳng hàng khi giá trị đổi.
+// Đặt class này lên phần tử chứa số thay vì rắc tabular-nums khắp nơi.
+.numeric {
+	font-variant-numeric: tabular-nums;
+	font-feature-settings: 'tnum' 1;
 }

@@ -13,7 +13,7 @@ export function Providers({ children }: { children: React.ReactNode }) {
 	return (
 		<QueryClientProvider client={queryClient}>
 			<NuqsAdapter>
-				<ThemeProvider attribute="class" defaultTheme="system" enableSystem>
+				<ThemeProvider attribute="class" defaultTheme="light" enableSystem>
 					{children}
 					<Toaster richColors position="top-right" />
 				</ThemeProvider>

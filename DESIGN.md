@@ -1,114 +1,132 @@
 ---
-version: alpha
-name: Linear-design-analysis
-description: 'A near-black product-focused marketing canvas built around #010102 (the deepest dark surface of any tool in this collection), light gray text (#f7f8f8), and the signature Linear lavender-blue (#5e6ad2) used as the single chromatic accent. The system reads as software-craft documentation: dense, technical, and quietly luxurious. Display type is set in the Linear custom sans (SF Pro Display fallback) at 500–700 with measured negative tracking. Cards live as charcoal panels (#0f1011) with hairline borders. The accent lavender appears on the brand mark, focus rings, and a few intentional CTAs — never decoratively. Page rhythm leans on product UI screenshots framed in dark panels rather than atmospheric color.'
+version: 1.0
+name: base-fe-design-system
+description: 'Hệ thiết kế mặc định của base Next.js. Dành cho ứng dụng nghiệp vụ nội bộ: dày dữ liệu, dùng nhiều giờ mỗi ngày. Light-first, dựng quanh navy #203868 làm accent duy nhất, với toàn bộ thang xám lệch hue 220 để chrome và bản ghi nằm cùng một họ màu. Ngôn ngữ thị giác là technical (mono cho mã bản ghi và thời gian, chữ số đều cột, hairline 1px thay đổi phân cấp, không đổ bóng) cộng visualize (tiến trình nhiều bước hiện thành stepper và timeline, trạng thái bản ghi mã hoá bằng bộ semantic bốn màu kèm nhãn chữ, biểu đồ dùng palette categorical đã qua kiểm định mù màu). Mật độ ở mức ứng dụng nghiệp vụ, không phải trang marketing.'
 
 colors:
-    primary: '#5e6ad2'
+    navy-50: '#eff3fb'
+    navy-100: '#dbe4f5'
+    navy-200: '#b8c9ea'
+    navy-300: '#8aa5db'
+    navy-400: '#5b81cd'
+    navy-500: '#3a65bb'
+    navy-600: '#30549c'
+    navy-700: '#284581'
+    navy-800: '#203868'
+    navy-900: '#182a4e'
+    navy-950: '#0f1b33'
+    brand: '#203868'
+    on-brand: '#ffffff'
+    brand-edge: 'transparent'
+    dark-brand: '#203868'
+    dark-brand-edge: '#374562'
+    primary: '#203868'
     on-primary: '#ffffff'
-    primary-hover: '#828fff'
-    primary-focus: '#5e69d1'
-    ink: '#f7f8f8'
-    ink-muted: '#d0d6e0'
-    ink-subtle: '#8a8f98'
-    ink-tertiary: '#62666d'
-    canvas: '#010102'
-    surface-1: '#0f1011'
-    surface-2: '#141516'
-    surface-3: '#18191a'
-    surface-4: '#191a1b'
-    hairline: '#23252a'
-    hairline-strong: '#34343a'
-    hairline-tertiary: '#3e3e44'
-    inverse-canvas: '#ffffff'
-    inverse-surface-1: '#f5f6f6'
-    inverse-surface-2: '#f6f7f7'
-    inverse-ink: '#000000'
-    brand-secure: '#7a7fad'
-    semantic-success: '#27a644'
-    semantic-overlay: '#000000'
+    primary-hover: '#284581'
+    primary-active: '#182a4e'
+    primary-text: '#203868'
+    primary-focus: '#30549c'
+    canvas: '#ffffff'
+    surface-1: '#f4f6fa'
+    surface-2: '#edf1f7'
+    surface-3: '#e6ebf3'
+    ink: '#0b1220'
+    ink-muted: '#3a4356'
+    ink-subtle: '#5b6679'
+    hairline: '#dde3ed'
+    hairline-strong: '#c3ccdb'
+    hairline-tertiary: '#eaeef5'
+    dark-primary: '#3a65bb'
+    dark-primary-hover: '#446fc5'
+    dark-primary-active: '#30549c'
+    dark-primary-text: '#8aa5db'
+    dark-primary-focus: '#5b81cd'
+    dark-canvas: '#080b12'
+    dark-surface-1: '#0d121c'
+    dark-surface-2: '#121926'
+    dark-surface-3: '#182030'
+    dark-surface-4: '#1d2739'
+    dark-ink: '#eef1f7'
+    dark-ink-muted: '#c3ccdd'
+    dark-ink-subtle: '#8794ac'
+    dark-hairline: '#273249'
+    dark-hairline-strong: '#374562'
+    dark-hairline-tertiary: '#1e2740'
+    success: '#15683f'
+    success-subtle: '#e3f3ea'
+    warning: '#8a5a00'
+    warning-subtle: '#fbf0dc'
+    danger: '#a32219'
+    danger-subtle: '#fbe6e4'
+    info: '#203868'
+    info-subtle: '#dbe4f5'
+    dark-success: '#4fbe84'
+    dark-success-subtle: '#10261b'
+    dark-warning: '#d6a045'
+    dark-warning-subtle: '#2a2013'
+    dark-danger: '#e9837a'
+    dark-danger-subtle: '#2c1715'
+    dark-info: '#8aa5db'
+    dark-info-subtle: '#16203a'
 
 typography:
-    display-xl:
-        fontFamily: Linear Display
-        fontSize: 80px
-        fontWeight: 600
-        lineHeight: 1.05
-        letterSpacing: -3.0px
     display-lg:
-        fontFamily: Linear Display
-        fontSize: 56px
-        fontWeight: 600
-        lineHeight: 1.10
-        letterSpacing: -1.8px
-    display-md:
-        fontFamily: Linear Display
+        fontFamily: Geist Sans
         fontSize: 40px
         fontWeight: 600
-        lineHeight: 1.15
-        letterSpacing: -1.0px
-    headline:
-        fontFamily: Linear Display
-        fontSize: 28px
+        lineHeight: 48px
+        letterSpacing: -1px
+    display-md:
+        fontFamily: Geist Sans
+        fontSize: 32px
         fontWeight: 600
-        lineHeight: 1.20
-        letterSpacing: -0.6px
-    card-title:
-        fontFamily: Linear Display
-        fontSize: 22px
-        fontWeight: 500
-        lineHeight: 1.25
-        letterSpacing: -0.4px
-    subhead:
-        fontFamily: Linear Display
+        lineHeight: 40px
+        letterSpacing: -1px
+    headline:
+        fontFamily: Geist Sans
+        fontSize: 24px
+        fontWeight: 600
+        lineHeight: 32px
+        letterSpacing: -1px
+    section:
+        fontFamily: Geist Sans
         fontSize: 20px
-        fontWeight: 400
-        lineHeight: 1.40
-        letterSpacing: -0.2px
-    body-lg:
-        fontFamily: Linear Text
+        fontWeight: 600
+        lineHeight: 28px
+        letterSpacing: 0px
+    title:
+        fontFamily: Geist Sans
         fontSize: 18px
-        fontWeight: 400
-        lineHeight: 1.50
-        letterSpacing: -0.1px
-    body:
-        fontFamily: Linear Text
+        fontWeight: 500
+        lineHeight: 24px
+        letterSpacing: 0px
+    body-lg:
+        fontFamily: Geist Sans
         fontSize: 16px
         fontWeight: 400
-        lineHeight: 1.50
-        letterSpacing: -0.05px
-    body-sm:
-        fontFamily: Linear Text
+        lineHeight: 24px
+        letterSpacing: 0px
+    body:
+        fontFamily: Geist Sans
         fontSize: 14px
         fontWeight: 400
-        lineHeight: 1.50
-        letterSpacing: 0
+        lineHeight: 20px
+        letterSpacing: 0px
     caption:
-        fontFamily: Linear Text
+        fontFamily: Geist Sans
         fontSize: 12px
         fontWeight: 400
-        lineHeight: 1.40
-        letterSpacing: 0
-    button:
-        fontFamily: Linear Text
-        fontSize: 14px
-        fontWeight: 500
-        lineHeight: 1.20
-        letterSpacing: 0
+        lineHeight: 16px
+        letterSpacing: 0px
     eyebrow:
-        fontFamily: Linear Text
-        fontSize: 13px
+        fontFamily: Geist Sans
+        fontSize: 12px
         fontWeight: 500
-        lineHeight: 1.30
-        letterSpacing: 0.4px
-    mono:
-        fontFamily: Linear Mono
-        fontSize: 13px
-        fontWeight: 400
-        lineHeight: 1.50
-        letterSpacing: 0
+        lineHeight: 16px
+        letterSpacing: 1px
 
 rounded:
+    2xs: 2px
     xs: 4px
     sm: 6px
     md: 8px
@@ -126,479 +144,524 @@ spacing:
     lg: 24px
     xl: 32px
     xxl: 48px
-    section: 96px
+    section: 64px
 
 components:
     button-primary:
         backgroundColor: '{colors.primary}'
         textColor: '{colors.on-primary}'
-        typography: '{typography.button}'
+        typography: '{typography.body}'
         rounded: '{rounded.md}'
         padding: 8px 14px
-    button-primary-pressed:
-        backgroundColor: '{colors.primary-focus}'
-        textColor: '{colors.on-primary}'
-        typography: '{typography.button}'
-        rounded: '{rounded.md}'
     button-primary-hover:
         backgroundColor: '{colors.primary-hover}'
         textColor: '{colors.on-primary}'
-        typography: '{typography.button}'
+        typography: '{typography.body}'
+        rounded: '{rounded.md}'
+    button-primary-active:
+        backgroundColor: '{colors.primary-active}'
+        textColor: '{colors.on-primary}'
+        typography: '{typography.body}'
         rounded: '{rounded.md}'
     button-secondary:
-        backgroundColor: '{colors.surface-1}'
-        textColor: '{colors.ink}'
-        typography: '{typography.button}'
-        rounded: '{rounded.md}'
-        padding: 8px 14px
-    button-tertiary:
-        backgroundColor: '{colors.canvas}'
-        textColor: '{colors.ink}'
-        typography: '{typography.button}'
-        rounded: '{rounded.md}'
-        padding: 8px 14px
-    button-inverse:
-        backgroundColor: '{colors.inverse-canvas}'
-        textColor: '{colors.inverse-ink}'
-        typography: '{typography.button}'
-        rounded: '{rounded.md}'
-        padding: 8px 14px
-    pricing-card:
-        backgroundColor: '{colors.surface-1}'
-        textColor: '{colors.ink}'
-        typography: '{typography.body}'
-        rounded: '{rounded.lg}'
-        padding: 24px
-    pricing-card-featured:
         backgroundColor: '{colors.surface-2}'
         textColor: '{colors.ink}'
         typography: '{typography.body}'
-        rounded: '{rounded.lg}'
-        padding: 24px
-    feature-card:
-        backgroundColor: '{colors.surface-1}'
-        textColor: '{colors.ink}'
-        typography: '{typography.body}'
-        rounded: '{rounded.lg}'
-        padding: 24px
-    product-screenshot-card:
-        backgroundColor: '{colors.surface-1}'
-        textColor: '{colors.ink}'
-        typography: '{typography.body}'
-        rounded: '{rounded.xl}'
-        padding: 24px
-    testimonial-card:
-        backgroundColor: '{colors.surface-1}'
-        textColor: '{colors.ink}'
-        typography: '{typography.body-lg}'
-        rounded: '{rounded.lg}'
-        padding: 32px
-    customer-logo-tile:
+        rounded: '{rounded.md}'
+        padding: 8px 14px
+    button-outline:
         backgroundColor: '{colors.canvas}'
-        textColor: '{colors.ink-subtle}'
-        typography: '{typography.caption}'
-        rounded: '{rounded.xs}'
-        padding: 16px
-    text-input:
-        backgroundColor: '{colors.surface-1}'
         textColor: '{colors.ink}'
         typography: '{typography.body}'
         rounded: '{rounded.md}'
-        padding: 8px 12px
-    text-input-focused:
-        backgroundColor: '{colors.surface-1}'
-        textColor: '{colors.ink}'
-        typography: '{typography.body}'
-        rounded: '{rounded.md}'
-        padding: 8px 12px
-    pricing-tab-default:
-        backgroundColor: '{colors.canvas}'
-        textColor: '{colors.ink-subtle}'
-        typography: '{typography.button}'
-        rounded: '{rounded.pill}'
-        padding: 6px 14px
-    pricing-tab-selected:
-        backgroundColor: '{colors.surface-2}'
-        textColor: '{colors.ink}'
-        typography: '{typography.button}'
-        rounded: '{rounded.pill}'
-        padding: 6px 14px
-    cta-banner:
-        backgroundColor: '{colors.surface-1}'
-        textColor: '{colors.ink}'
-        typography: '{typography.headline}'
-        rounded: '{rounded.lg}'
-        padding: 48px
-    changelog-row:
-        backgroundColor: '{colors.canvas}'
-        textColor: '{colors.ink}'
-        typography: '{typography.body}'
-        rounded: '{rounded.xs}'
-        padding: 24px 0
-    status-badge:
-        backgroundColor: '{colors.surface-2}'
+        padding: 8px 14px
+    button-ghost:
+        backgroundColor: 'transparent'
         textColor: '{colors.ink-muted}'
+        typography: '{typography.body}'
+        rounded: '{rounded.md}'
+        padding: 8px 14px
+    text-input:
+        backgroundColor: '{colors.canvas}'
+        textColor: '{colors.ink}'
+        typography: '{typography.body}'
+        rounded: '{rounded.md}'
+        padding: 8px 12px
+    panel:
+        backgroundColor: '{colors.surface-1}'
+        textColor: '{colors.ink}'
+        typography: '{typography.body}'
+        rounded: '{rounded.lg}'
+        padding: 24px
+    panel-nested:
+        backgroundColor: '{colors.surface-2}'
+        textColor: '{colors.ink}'
+        typography: '{typography.body}'
+        rounded: '{rounded.md}'
+        padding: 16px
+    table-row:
+        backgroundColor: '{colors.canvas}'
+        textColor: '{colors.ink}'
+        typography: '{typography.body}'
+        rounded: '{rounded.xs}'
+        padding: 12px 16px
+    stat-tile:
+        backgroundColor: '{colors.surface-1}'
+        textColor: '{colors.ink}'
+        typography: '{typography.display-md}'
+        rounded: '{rounded.lg}'
+        padding: 20px
+    status-badge:
+        backgroundColor: '{colors.success-subtle}'
+        textColor: '{colors.success}'
         typography: '{typography.caption}'
-        rounded: '{rounded.pill}'
+        rounded: '{rounded.sm}'
         padding: 2px 8px
+    stepper-node-done:
+        backgroundColor: '{colors.primary}'
+        textColor: '{colors.on-primary}'
+        typography: '{typography.caption}'
+        rounded: '{rounded.full}'
+    stepper-node-current:
+        backgroundColor: '{colors.canvas}'
+        textColor: '{colors.primary-text}'
+        typography: '{typography.caption}'
+        rounded: '{rounded.full}'
+    stepper-node-todo:
+        backgroundColor: '{colors.surface-2}'
+        textColor: '{colors.ink-subtle}'
+        typography: '{typography.caption}'
+        rounded: '{rounded.full}'
     top-nav:
         backgroundColor: '{colors.canvas}'
         textColor: '{colors.ink}'
-        typography: '{typography.body-sm}'
+        typography: '{typography.body}'
         rounded: '{rounded.xs}'
         height: 56px
-    footer:
-        backgroundColor: '{colors.canvas}'
-        textColor: '{colors.ink-subtle}'
-        typography: '{typography.caption}'
+    sidebar:
+        backgroundColor: '{colors.surface-1}'
+        textColor: '{colors.ink-muted}'
+        typography: '{typography.body}'
         rounded: '{rounded.xs}'
-        padding: 64px 32px
+        padding: 12px
 ---
 
+> **Xem trực tiếp:** chạy `pnpm dev` rồi mở **`/design`** — trang đó render toàn bộ thang màu,
+> thang chữ và các thành phần dùng chung của file này, ở cả light lẫn dark. Đổi token thì đối chiếu
+> ở đó trước khi bàn giao.
+>
 > **Trạng thái áp dụng**
 >
-> Palette trong file này **đã được áp vào** `src/app/globals.scss`:
-> `.dark` dùng bộ token chính (canvas → surface-4, ink, hairline, lavender),
-> `:root` dựng từ bộ `inverse-*` vì bản gốc Linear không có light mode.
+> Toàn bộ palette trong file này **đã được áp vào** `src/app/globals.scss`.
+> `:root` giữ bộ light (theme mặc định), `.dark` giữ bộ `dark-*`.
 >
 > Ánh xạ token → biến CSS:
 >
-> | DESIGN.md                         | Biến CSS                       |
-> | --------------------------------- | ------------------------------ |
-> | `canvas` / `inverse-canvas`       | `--background`                 |
-> | `surface-1` / `inverse-surface-1` | `--card`                       |
-> | `surface-2`                       | `--popover`, `--secondary`     |
-> | `surface-3`                       | `--muted`                      |
-> | `surface-4`                       | `--accent`                     |
-> | `ink` / `inverse-ink`             | `--foreground`                 |
-> | `ink-muted`                       | `--ink-muted`                  |
-> | `ink-subtle`                      | `--muted-foreground`           |
-> | `primary`                         | `--primary`                    |
-> | `primary-hover`                   | `--primary-hover`              |
-> | `primary-focus`                   | `--ring`                       |
-> | `hairline`                        | `--border`                     |
-> | `hairline-strong`                 | `--hairline-strong`, `--input` |
-> | `hairline-tertiary`               | `--hairline-tertiary`          |
-> | `semantic-success`                | `--success`                    |
+> | DESIGN.md                                 | Biến CSS                                          |
+> | ----------------------------------------- | ------------------------------------------------- |
+> | `navy-50` … `navy-950`                    | utility `bg-navy-*`, `text-navy-*`                |
+> | `canvas` / `dark-canvas`                  | `--background`                                    |
+> | `surface-1` / `dark-surface-1`            | `--card`, `--muted` (light)                       |
+> | `surface-2` / `dark-surface-2`            | `--secondary`, `--popover` (dark)                 |
+> | `surface-3` / `dark-surface-3`            | `--accent` (light), `--muted` (dark)              |
+> | `dark-surface-4`                          | `--accent` (dark)                                 |
+> | `ink` / `dark-ink`                        | `--foreground`                                    |
+> | `ink-muted`                               | `--ink-muted`                                     |
+> | `ink-subtle`                              | `--muted-foreground`                              |
+> | `primary`                                 | `--primary`                                       |
+> | `primary-text`                            | `--primary-text` (chữ màu primary)                |
+> | `primary-hover`                           | `--primary-hover`                                 |
+> | `primary-active`                          | `--primary-active`                                |
+> | `primary-focus`                           | `--ring`                                          |
+> | `hairline`                                | `--border`                                        |
+> | `hairline-strong`                         | `--hairline-strong`, `--input`                    |
+> | `hairline-tertiary`                       | `--hairline-tertiary`                             |
+> | `success` / `warning` / `danger` / `info` | `--success` … `--info` + `-foreground`, `-subtle` |
 >
 > Thang `rounded` đặt giá trị tuyệt đối trong `@theme`, **không** dẫn xuất bằng
 > `calc(var(--radius) * n)` — cách đó cho 7.2px/9.6px, lệch khỏi thang 6/8/16.
 >
-> Chưa map: `brand-secure` (chỉ dùng ở `--chart-3`), `semantic-overlay` (dùng
-> mặc định của Radix). Font dùng Geist — DESIGN.md ghi đây là bản thay thế hợp lệ.
->
-> Không copy nhận diện thương hiệu của Linear vào sản phẩm thương mại.
+> Font dùng **Geist Sans** và **Geist Mono** qua `next/font` trong `layout.tsx`.
 
 ## Overview
 
-Linear's marketing canvas is the deepest dark surface in this collection — `{colors.canvas}` is #010102, essentially pure black with a faint blue tint. On top sits a four-step surface ladder (`{colors.surface-1}` through `{colors.surface-4}`) for cards, panels, and lifted tiles, with hairline borders running from `{colors.hairline}` (#23252a) up through `{colors.hairline-strong}` and `{colors.hairline-tertiary}`. Light gray text (`{colors.ink}` #f7f8f8) carries the body and headlines.
+Base này nhắm tới ứng dụng nghiệp vụ nội bộ: người dùng mở nó tám tiếng một ngày để tra cứu và xử lý dữ liệu. Hệ thiết kế phục vụ đúng việc đó, không phục vụ ấn tượng đầu tiên.
 
-The single chromatic accent is **Linear lavender-blue** `{colors.primary}` (#5e6ad2) — used on the brand mark, focus rings, and the primary CTA button. A lighter hover state (`{colors.primary-hover}` #828fff) and a focus-tinted variant (`{colors.primary-focus}` #5e69d1) extend the same hue. Linear avoids saturated greens, oranges, reds, etc. on the marketing canvas — the only semantic color is `{colors.semantic-success}` (#27a644) for status pills and the rare success indicator.
+**Light-first.** Canvas là trắng thuần `{colors.canvas}` vì nội dung chính là bản ghi, và bản ghi đọc trên nền sáng. Dark mode là bộ token đầy đủ song song, không phải bản đảo màu tự động.
 
-Display type runs Linear's custom sans (with `SF Pro Display` fallback) at weight 500–700 with negative letter-spacing scaling from -3.0px at 80px down to 0 at body. The body family is Linear's text cut, and a Linear Mono is reserved for code snippets in product screenshots.
+**Navy là họ màu nhấn duy nhất**, nhưng mỗi vai trò lấy một **bậc khác nhau** trong cùng thang, vì mỗi vai trò có một ràng buộc tương phản riêng: nút chính và node stepper đã xong dùng `--primary`, focus ring dùng `--ring` (navy-600 ở light, navy-400 ở dark), chart slot 1 dùng navy-500, chữ màu primary dùng `--primary-text`. Không dùng navy làm nền section hay fill card.
 
-The page rhythm is **dense product screenshots** — Linear's marketing leads with high-fidelity captures of the product UI (issue list, project view, dashboard) framed in `{colors.surface-1}` panels with `{rounded.xl}` 16px corners. The chrome is intentionally minimal so the app screenshots can do the heavy lifting.
+**Thang xám lệch navy.** Mọi bậc surface và mọi bậc chữ đều mang hue 220°, không phải xám trung tính. Khác biệt nhỏ nhưng làm cả app đọc như một họ màu thay vì navy dán lên nền xám.
 
-**Key Characteristics:**
+**Phân cấp bằng surface và hairline, không bằng đổ bóng.** Thang ba bậc ở light (`canvas → surface-1 → surface-2 → surface-3`) và bốn bậc ở dark, cộng viền 1px.
 
-- **Dark-canvas marketing system** — `{colors.canvas}` (#010102) is the deepest dark in this collection.
-- **Lavender-blue brand accent** (`{colors.primary}` #5e6ad2) — used scarcely on brand mark, focus, and the primary CTA.
-- Four-step surface ladder (canvas → surface-1 → surface-2 → surface-3 → surface-4) carries hierarchy without shadow.
-- Display tracking pulls aggressively negative (-3.0px at 80px); body holds at -0.05px.
-- Cards use `{rounded.lg}` 12px corners with 1px hairline borders — never pill, rarely 16px.
-- **Product UI screenshots** dominate the page. The marketing chrome is a dark frame for the app.
-- No second chromatic color. No atmospheric gradients. No spotlight cards.
+**Hai trụ ngôn ngữ thị giác** là **technical** và **visualize**, mô tả riêng ở mục dưới.
 
 ## Colors
 
-> Source pages: linear.app (home), /intake, /pricing, /contact/sales, /build.
+### Brand và Primary là hai việc khác nhau
 
-### Brand & Accent
+Đây là điểm dễ nhầm nhất của hệ này, nên nói trước tất cả.
 
-- **Lavender-Blue** ({colors.primary}): The signature Linear accent — primary CTA, brand mark, link emphasis.
-- **Lavender Hover** ({colors.primary-hover}): Lighter lavender (#828fff) — hovered state of the primary CTA.
-- **Lavender Focus** ({colors.primary-focus}): Focus-ring tint (#5e69d1) — focused inputs, focused buttons.
-- **Brand Secure** ({colors.brand-secure}): Muted lavender-gray (#7a7fad) — used in "Linear Security" surfaces.
+|             | `--brand`                                                               | `--primary`                                                                                                        |
+| ----------- | ----------------------------------------------------------------------- | ------------------------------------------------------------------------------------------------------------------ |
+| Việc nó làm | Nhận diện thương hiệu                                                   | Màu hành động                                                                                                      |
+| Dùng ở đâu  | Dấu logo, và chỉ ở đó                                                   | Nút chính và node stepper đã xong. Focus ring dùng `--ring`, chart slot 1 dùng navy-500, chữ dùng `--primary-text` |
+| Light       | `#203868`                                                               | `#203868`                                                                                                          |
+| Dark        | **`#203868`** (giữ nguyên)                                              | `#3a65bb` (navy-500)                                                                                               |
+| Vì sao      | Logo không phải điều khiển nên không chịu ràng buộc tương phản của WCAG | Nút bắt buộc tách khỏi nền tối thiểu 3:1                                                                           |
+
+`#203868` trên canvas tối `#080b12` chỉ đạt **1.7:1**. Với một cái nút thì đó là lỗi accessibility, nút gần như tàng hình. Với dấu logo thì không: nó không phải thứ người dùng bấm, chữ trắng bên trong vẫn đạt 11.5:1, và `--brand-edge` vẽ một viền hairline ở dark để thấy cạnh.
+
+Nên **màu thương hiệu bạn nhìn thấy trên logo luôn đúng `#203868` ở cả hai theme**. Chỉ màu nút mới đổi bậc.
+
+Dùng `BrandMark` (`src/components/layout/BrandMark.tsx`) cho logo, đừng tự dựng bằng `bg-primary`.
+
+### Thang navy
+
+`{colors.navy-800}` #203868 là anchor thương hiệu. Toàn bộ thang giữ hue 220°, chỉ đổi lightness và saturation.
+
+| Bậc                 | Hex     | Dùng cho                                   |
+| ------------------- | ------- | ------------------------------------------ |
+| `{colors.navy-50}`  | #eff3fb | nền nhấn rất nhạt ở light                  |
+| `{colors.navy-100}` | #dbe4f5 | `info-subtle` ở light                      |
+| `{colors.navy-200}` | #b8c9ea | viền nhấn, thanh chart nhạt                |
+| `{colors.navy-300}` | #8aa5db | `info` ở dark, stage-1 light, stage-4 dark |
+| `{colors.navy-400}` | #5b81cd | focus ring dark, chart-1 dark              |
+| `{colors.navy-500}` | #3a65bb | **primary ở dark**, chart-1 light          |
+| `{colors.navy-600}` | #30549c | focus ring light, primary-active dark      |
+| `{colors.navy-700}` | #284581 | primary-hover light                        |
+| `{colors.navy-800}` | #203868 | **primary ở light — anchor thương hiệu**   |
+| `{colors.navy-900}` | #182a4e | primary-active light                       |
+| `{colors.navy-950}` | #0f1b33 | nền navy đặc, hiếm dùng                    |
+
+**Vì sao primary đổi bậc giữa hai theme.** Navy-800 có luminance 0.041. Trên canvas dark #080b12 nó chỉ tách khỏi nền **1.7:1**, dưới ngưỡng WCAG 3:1 cho ranh giới component — nút sẽ gần như tàng hình. Nên dark mode dùng navy-500, đạt **3.5:1** với canvas và **5.6:1** cho chữ trắng. Cùng hue, cùng thương hiệu, khác bậc.
 
 ### Surface
 
-- **Canvas** ({colors.canvas}): Default page background — #010102, near-pure black with a faint blue tint.
-- **Surface 1** ({colors.surface-1}): One step above canvas — feature cards, pricing cards, product screenshot panels.
-- **Surface 2** ({colors.surface-2}): Two steps above — featured pricing card, hovered cards.
-- **Surface 3** ({colors.surface-3}): Three steps above — line-tertiary backgrounds, sub-nav.
-- **Surface 4** ({colors.surface-4}): Four steps above — bg-level-3, deepest lifted surface.
-- **Hairline** ({colors.hairline}): 1px borders on cards and dividers.
-- **Hairline Strong** ({colors.hairline-strong}): Stronger 1px borders — input focus rings.
-- **Hairline Tertiary** ({colors.hairline-tertiary}): Tertiary borders for nested surfaces.
-- **Inverse Canvas** ({colors.inverse-canvas}): Pure white — surface of the inverse pill CTA on a small set of section openers.
-- **Inverse Surface 1** ({colors.inverse-surface-1}): One step above inverse canvas.
-- **Inverse Surface 2** ({colors.inverse-surface-2}): Two steps above inverse canvas.
+| Vai trò                         | Light    | Dark    |
+| ------------------------------- | -------- | ------- |
+| canvas                          | #ffffff  | #080b12 |
+| surface-1 (panel, sidebar)      | #f4f6fa  | #0d121c |
+| surface-2 (panel lồng, popover) | #edf1f7  | #121926 |
+| surface-3                       | #e6ebf3  | #182030 |
+| surface-4                       | không có | #1d2739 |
+
+Light chỉ cần ba bậc vì nền trắng đã là mốc; dark cần bốn vì phải tách nhiều lớp trên nền tối.
 
 ### Text
 
-- **Ink** ({colors.ink}): All headlines and emphasized body type — light gray #f7f8f8.
-- **Ink Muted** ({colors.ink-muted}): Secondary type at #d0d6e0 — meta info on hero panels.
-- **Ink Subtle** ({colors.ink-subtle}): Tertiary type at #8a8f98 — deselected pricing tabs, footer columns.
-- **Ink Tertiary** ({colors.ink-tertiary}): Quaternary at #62666d — disabled, footnotes.
+| Cấp | Token                                  | Light   | Dark    | Tương phản trên canvas   |
+| --- | -------------------------------------- | ------- | ------- | ------------------------ |
+| 1   | `ink` → `text-foreground`              | #0b1220 | #eef1f7 | ≥ 16:1                   |
+| 2   | `ink-muted` → `text-ink-muted`         | #3a4356 | #c3ccdd | 9.9:1 light              |
+| 3   | `ink-subtle` → `text-muted-foreground` | #5b6679 | #8794ac | 5.8:1 light · 6.4:1 dark |
+
+**KHÔNG dùng opacity trên chữ.** `text-muted-foreground/60` phá tương phản đã tính. Phân cấp bằng ba token trên.
 
 ### Semantic
 
-- **Success Green** ({colors.semantic-success}): Status pills, success indicators. The only semantic color on marketing.
-- **Overlay** ({colors.semantic-overlay}): Pure black overlay scrim for modals.
+Bốn màu, chỉ dành cho **trạng thái nghiệp vụ thật** của bản ghi.
+
+| Trạng thái             | Token     | Light                | Dark                 |
+| ---------------------- | --------- | -------------------- | -------------------- |
+| Hoàn tất, đã lưu trữ   | `success` | #15683f trên #e3f3ea | #4fbe84 trên #10261b |
+| Chờ xử lý, sắp hết hạn | `warning` | #8a5a00 trên #fbf0dc | #d6a045 trên #2a2013 |
+| Từ chối, quá hạn, lỗi  | `danger`  | #a32219 trên #fbe6e4 | #e9837a trên #2c1715 |
+| Đang xử lý, thông tin  | `info`    | #203868 trên #dbe4f5 | #8aa5db trên #16203a |
+
+Mọi cặp chữ-trên-nền ở trên đều đạt tối thiểu **5.2:1**, qua WCAG AA.
+
+**Luật dùng.** Semantic **luôn đi kèm nhãn chữ hoặc icon**, không bao giờ đứng một mình bằng màu. Người mù màu và người in đen trắng vẫn phải đọc được trạng thái bản ghi. Không dùng bốn màu này cho trang trí, cho series biểu đồ, hay cho phân loại phòng ban.
+
+### Chart
+
+Bộ categorical đã chạy qua `scripts/validate_palette.js` của skill `dataviz` và **pass toàn bộ** ở cả hai mode: dải lightness, sàn chroma, tách biệt mù màu (ΔE ≥ 8), sàn thị lực thường (ΔE ≥ 15), tương phản với nền.
+
+| Slot        | Light   | Dark    |
+| ----------- | ------- | ------- |
+| `--chart-1` | #3a65bb | #5b81cd |
+| `--chart-2` | #eb6834 | #d95926 |
+| `--chart-3` | #1baf7a | #199e70 |
+| `--chart-4` | #eda100 | #c98500 |
+| `--chart-5` | #e87ba4 | #d55181 |
+
+**Gán màu theo thứ tự cố định, không xoay vòng.** Series thứ 6 trở đi gộp vào "Khác" hoặc tách thành small multiples, không sinh thêm hue.
+
+⚠️ **Relief rule ở light mode.** `--chart-3`, `--chart-4`, `--chart-5` nằm dưới 3:1 trên nền trắng. Biểu đồ dùng chúng **bắt buộc** có nhãn trực tiếp hoặc bảng dữ liệu kèm theo. Không được để màu tự nói. Dark mode cả 5 slot đều ≥ 3:1 nên không cần.
+
+### Ordinal — tiến trình
+
+Một hue, sáng → đậm, dùng cho stepper, funnel, thanh tiến độ nhiều chặng. Đã validate `--ordinal`: đơn điệu về lightness, khoảng cách bậc ≥ 0.06, đầu nhạt vẫn ≥ 2:1 với nền.
+
+| Bậc         | Light   | Dark    |
+| ----------- | ------- | ------- |
+| `--stage-1` | #8aa5db | #30549c |
+| `--stage-2` | #5b81cd | #3a65bb |
+| `--stage-3` | #3a65bb | #5b81cd |
+| `--stage-4` | #284581 | #8aa5db |
+
+Bậc nhạt hơn `navy-200` **không** dùng được ở light: #b8c9ea chỉ đạt 1.67:1 trên trắng, dưới sàn 2:1.
 
 ## Typography
 
-### Font Family
+**Geist Sans** cho mọi chữ, **Geist Mono** cho dữ liệu máy. Không dùng serif. Không dùng font thứ ba.
 
-- **Linear Display** — Linear's custom display sans; fallback `SF Pro Display, -apple-system, system-ui, Segoe UI, Roboto`. Carries display-xl through subhead.
-- **Linear Text** — Linear's custom text sans (a slightly different cut tuned for body sizes); same fallback stack. Carries body sizes, button labels, captions.
-- **Linear Mono** — Linear's custom mono; fallback `ui-monospace, SF Mono, Menlo`. Used for code snippets in product screenshots and for status / ID tokens.
+### Thang chữ toàn số nguyên
 
-The marketing surface treats Display and Text as one continuous voice; the family change is silent.
+Mọi giá trị dưới đây là **số nguyên chẵn**. Không có 11px, 13px, cũng không có tracking thập phân kiểu -0.3px hay +0.8px.
 
-### Hierarchy
+`line-height` đặt bằng **px trên lưới 4px** thay vì tỷ lệ thập phân (1.15, 1.55…), nên mọi dòng chữ luôn khớp lưới dọc. `letter-spacing` chỉ nhận đúng ba giá trị: **-1px, 0, +1px**.
 
-| Token                     | Size | Weight | Line Height | Letter Spacing | Use                                         |
-| ------------------------- | ---- | ------ | ----------- | -------------- | ------------------------------------------- |
-| `{typography.display-xl}` | 80px | 600    | 1.05        | -3.0px         | Largest hero headline                       |
-| `{typography.display-lg}` | 56px | 600    | 1.10        | -1.8px         | Section opener headlines                    |
-| `{typography.display-md}` | 40px | 600    | 1.15        | -1.0px         | Sub-section headlines                       |
-| `{typography.headline}`   | 28px | 600    | 1.20        | -0.6px         | Pricing tier titles, CTA banner heading     |
-| `{typography.card-title}` | 22px | 500    | 1.25        | -0.4px         | Feature card title                          |
-| `{typography.subhead}`    | 20px | 400    | 1.40        | -0.2px         | Lead body, intro paragraphs                 |
-| `{typography.body-lg}`    | 18px | 400    | 1.50        | -0.1px         | Hero subhead, lead paragraphs               |
-| `{typography.body}`       | 16px | 400    | 1.50        | -0.05px        | Default body                                |
-| `{typography.body-sm}`    | 14px | 400    | 1.50        | 0              | Card body, footer columns                   |
-| `{typography.caption}`    | 12px | 400    | 1.40        | 0              | Captions, meta, status                      |
-| `{typography.button}`     | 14px | 500    | 1.20        | 0              | All button labels                           |
-| `{typography.eyebrow}`    | 13px | 500    | 1.30        | 0.4px          | Section eyebrow (slight positive tracking)  |
-| `{typography.mono}`       | 13px | 400    | 1.50        | 0              | Linear Mono for code in product screenshots |
+| Token                     | Size | Line-height | Tracking | Weight | Utility           | Dùng cho                      |
+| ------------------------- | ---- | ----------- | -------- | ------ | ----------------- | ----------------------------- |
+| `{typography.display-lg}` | 40px | 48px        | -1px     | 600    | `text-display-lg` | Tiêu đề trang lớn nhất        |
+| `{typography.display-md}` | 32px | 40px        | -1px     | 600    | `text-display-md` | Số liệu trong stat tile       |
+| `{typography.headline}`   | 24px | 32px        | -1px     | 600    | `text-headline`   | Tiêu đề trang                 |
+| `{typography.section}`    | 20px | 28px        | 0        | 600    | `text-section`    | Tiêu đề khối                  |
+| `{typography.title}`      | 18px | 24px        | 0        | 500    | `text-title`      | Tiêu đề card, tên bản ghi     |
+| `{typography.body-lg}`    | 16px | 24px        | 0        | 400    | `text-body-lg`    | Đoạn dẫn                      |
+| `{typography.body}`       | 14px | 20px        | 0        | 400    | `text-body`       | **Mặc định toàn app**         |
+| `{typography.caption}`    | 12px | 16px        | 0        | 400    | `text-caption`    | Meta, nhãn badge, mô tả phụ   |
+| `{typography.eyebrow}`    | 12px | 16px        | +1px     | 500    | `text-eyebrow`    | Nhãn phân loại khối, viết hoa |
 
-### Principles
+Mono dùng chung cỡ với thang trên, chỉ đổi họ chữ: `font-mono text-body` cho mã bản ghi và ID, `font-mono text-caption` cho timestamp và số hiệu bước.
 
-- **Aggressive negative tracking on display** (-3.0px at 80px ≈ 4% of size).
-- **Single voice from display to body.** Display-xl at 600 → body at 400 — same family, narrower weights.
-- **Eyebrow uses positive tracking** (+0.4px) — contrast against the negative-tracked display marks the eyebrow as taxonomy.
-- **Mono only in code contexts.** Linear Mono lives inside product screenshots — not on marketing chrome.
+### Dùng utility, không viết giá trị tay
 
-### Note on Font Substitutes
+Mỗi token đã gói sẵn **size + line-height + tracking + weight** trong `globals.scss`, nên chỉ cần một class:
 
-Linear's custom typeface isn't publicly distributed; the documented fallback `SF Pro Display, -apple-system, system-ui` is the recommended substitute on macOS. For cross-platform implementation, **Inter** at weight 500 / 600 / 700 is the closest free substitute. **Geist Sans** is also viable. For mono, **JetBrains Mono** or **Geist Mono** at weight 400 closely approximates Linear Mono.
+```tsx
+// ✅ ĐÚNG
+<h2 className="text-section text-foreground">Tiêu đề khối</h2>
+
+// ❌ SAI — giá trị tay sẽ trôi khỏi thang, và đây chính là nguồn gốc của 11px/13px/0.3px
+<h2 className="text-[18px] leading-[1.3] tracking-[-0.3px] font-semibold">Tiêu đề khối</h2>
+```
+
+Cần đổi weight thì thêm `font-medium` / `font-semibold`; đừng đổi size.
+
+**Body mặc định là 14px, không phải 16px.** Đây là ứng dụng nghiệp vụ mật độ 6, không phải trang marketing. 16px chỉ dùng cho đoạn dẫn.
+
+**Display tối đa weight 600.** Không dùng 700+.
+
+**Eyebrow phải tiết chế.** Tối đa 1 eyebrow trên mỗi 3 khối trong cùng một màn hình. Phần lớn trường hợp tiêu đề khối tự đủ, bỏ eyebrow đi.
+
+## Technical — trụ thứ nhất
+
+"Technical" ở đây là quy tắc cụ thể, không phải cảm giác.
+
+**Mono cho dữ liệu máy sinh.** Mã bản ghi (`REF-2026-0148`), ID người dùng, mã giao dịch, timestamp, số hiệu phiên bản — tất cả dùng ``font-mono` + cỡ từ thang chữ`. Chữ do người viết dùng sans. Ranh giới này phải nhất quán tuyệt đối: nhìn vào một chuỗi là biết ngay nó do hệ thống hay do người tạo ra.
+
+**Chữ số đều cột.** Mọi cột số trong bảng, mọi stat tile, mọi bộ đếm dùng class `.numeric` (đã khai trong `globals.scss`). Không có nó, số nhảy lung tung khi giá trị đổi.
+
+**Hairline là công cụ phân cấp chính.** Viền 1px `{colors.hairline}` chia vùng. Bề mặt nằm trong luồng (card, panel, tile) không đổ bóng; chỉ lớp nổi mới có bóng, xem mục Elevation.
+
+**Bảng dùng đường kẻ tiết chế.** Chỉ `border-b` giữa các hàng, không kẻ cả trên lẫn dưới. Bảng trên 5 hàng cần header dính (`sticky`).
+
+**Không trang trí giả kỹ thuật.** Cấm những thứ này vì chúng làm ra vẻ technical mà không mang thông tin:
+
+- Nhãn phiên bản trang trí (`v1.4.2`, `build 0048`) ở nơi không phải trang phiên bản thật
+- Chuỗi toạ độ, giờ, thời tiết trong header hay footer
+- Đánh số khối kiểu `01 / TỔNG QUAN`, `002 · Bản ghi`
+- Chấm màu đứng trước mọi mục danh sách hay mọi mục nav
+- Đường kẻ ô vuông kiểu crosshair vẽ chỉ để trông "có thiết kế"
+
+Chấm trạng thái **chỉ** hợp lệ khi nó biểu thị trạng thái bản ghi thật, và luôn kèm nhãn chữ.
+
+**Số phải thật hoặc phải ghi rõ là mẫu.** Không bịa `92%`, `4.1×` cho đẹp. Dữ liệu demo phải có comment `{/* dữ liệu mẫu */}`.
+
+## Visualize — trụ thứ hai
+
+Một bộ bản ghi đi qua nhiều bước và nhiều vòng xử lý. Người dùng phải nhìn phát biết ngay: đang ở đâu, ai đang giữ, còn bao lâu.
+
+**Tiến trình luôn hiện thành hình, không chỉ thành chữ.** Một bản ghi đang ở bước 2/4 phải có stepper, không phải dòng chữ "Bước 2". Ba dạng dùng theo ngữ cảnh:
+
+| Dạng              | Dùng khi                                                    |
+| ----------------- | ----------------------------------------------------------- |
+| **Stepper ngang** | Quy trình ≤ 5 bước, hiện ở đầu trang chi tiết bản ghi       |
+| **Timeline dọc**  | Lịch sử thao tác, mỗi mục có người, thời gian, hành động    |
+| **Thanh tiến độ** | Trong hàng của bảng danh sách, nơi không đủ chỗ cho stepper |
+
+**Ba trạng thái node của stepper** dùng `stepper-node-done` (nền primary), `stepper-node-current` (nền canvas, viền primary 2px, có ring), `stepper-node-todo` (nền surface-2, chữ ink-subtle). Node hiện tại là node duy nhất được phép có animation.
+
+**Stat tile là số, không phải card.** Một stat tile gồm: nhãn `{typography.caption}` ở trên, số `{typography.display-md}` ở giữa, biến động `{typography.caption}` ở dưới. Không icon trang trí, không nền màu.
+
+**Biểu đồ theo luật của skill `dataviz`:** một trục y duy nhất (không bao giờ hai thang), màu gán theo thực thể chứ không theo thứ hạng, legend luôn có khi từ 2 series, nhãn trực tiếp cho ≤ 4 series, lưới và trục lùi về sau.
+
+**Không visualize thứ không cần.** Một con số duy nhất thì hiện số, đừng vẽ donut một lát. Hai giá trị so sánh thì viết hai số cạnh nhau, đừng vẽ cột.
+
+## Motion
+
+`MOTION_INTENSITY` của dự án đặt ở mức **4/10**: có chuyển động, nhưng mọi chuyển động phải trả lời được câu "nó truyền đạt cái gì".
+
+**Thư viện.** `motion` (import từ `motion/react`) cho mọi thứ. `@number-flow/react` cho số biến động. Không dùng GSAP, Lenis hay Locomotive — chúng dành cho scrolltelling landing page, nhét vào app nghiệp vụ chỉ làm nặng bundle và giật bảng dữ liệu dài.
+
+**Bốn lý do hợp lệ** để thêm animation, ngoài ra thì không:
+
+1. **Phân cấp** — kéo mắt về node hiện tại của stepper
+2. **Kể chuyện** — timeline hiện dần theo thứ tự thời gian
+3. **Phản hồi** — nút lún 1px khi nhấn, toast trượt vào khi lưu xong
+4. **Chuyển trạng thái** — số đổi khi lọc, hàng bảng trượt khi sắp xếp
+
+**Thông số mặc định:** `duration 0.2s` cho phản hồi tương tác, `0.3s` cho chuyển trạng thái, easing `[0.16, 1, 0.3, 1]`. Spring `{ type: 'spring', stiffness: 100, damping: 20 }` cho chuyển động vật lý.
+
+**Chỉ animate `transform` và `opacity`.** Không animate `width`, `height`, `top`, `left`.
+
+**`prefers-reduced-motion` là bắt buộc.** Dùng `useReducedMotion()` của Motion và trả về trạng thái tĩnh. Vòng lặp vô hạn phải dừng hẳn.
+
+**Cấm:** `window.addEventListener('scroll')`, `useState` cho giá trị liên tục (dùng `useMotionValue`), animation vòng lặp vô hạn trên phần tử không mang trạng thái sống, marquee, scroll hijack, con trỏ chuột tuỳ biến.
 
 ## Layout
 
-### Spacing System
+**Base unit 4px.** Token: `{spacing.xxs}` 4 · `{spacing.xs}` 8 · `{spacing.sm}` 12 · `{spacing.md}` 16 · `{spacing.lg}` 24 · `{spacing.xl}` 32 · `{spacing.xxl}` 48 · `{spacing.section}` 64.
 
-- **Base unit**: 4px.
-- **Tokens (front matter)**: `{spacing.xxs}` 4px · `{spacing.xs}` 8px · `{spacing.sm}` 12px · `{spacing.md}` 16px · `{spacing.lg}` 24px · `{spacing.xl}` 32px · `{spacing.xxl}` 48px · `{spacing.section}` 96px.
-- Card interior padding: `{spacing.lg}` 24px on feature/pricing cards; `{spacing.xl}` 32px on testimonial cards; `{spacing.xxl}` 48px on CTA banners.
-- Pill button padding: 8px vertical · 14px horizontal — Linear's compact button spec.
-- Form input padding: 8px vertical · 12px horizontal.
+**Mật độ 6/10.** Khoảng cách giữa các khối là 32-48px, không phải 96px của trang marketing. Padding panel 24px, panel lồng 16px, ô bảng 12px dọc.
 
-### Grid & Container
+**Container** tối đa 1400px, căn giữa, `px-4` ở mobile và `px-6` từ `md` trở lên.
 
-- Max content width sits around 1280px.
-- Card grids are 3-up at desktop, 2-up at tablet, 1-up at mobile.
-- Pricing tier grid is 3-up; comparison strip below shows checkmarks per tier.
-- Product screenshot panels span full content width — they're the protagonist.
+**Grid, không phải flex math.** Dùng `grid grid-cols-1 md:grid-cols-3 gap-4`, không dùng `w-[calc(33%-1rem)]`.
 
-### Whitespace Philosophy
+**Chiều cao viewport** dùng `min-h-[100dvh]`, không dùng `h-screen`.
 
-The dark canvas IS the whitespace. Sections separate by lift onto surface-1 panels, not by gaps in white. Within a panel, generous `{spacing.lg}` 24px gaps between content blocks; `{spacing.section}` 96px between sections.
+**Layout đối xứng.** `DESIGN_VARIANCE` của dự án là **3/10**. App nghiệp vụ cần bố cục đoán trước được: lưới đều, căn trái, không lệch nghệ thuật, không masonry.
 
-## Elevation & Depth
+## Elevation
 
-| Level              | Treatment                                                          | Use                                      |
-| ------------------ | ------------------------------------------------------------------ | ---------------------------------------- |
-| 0 (flat)           | No shadow, no border                                               | Default for body type, hero text, footer |
-| 1 (charcoal lift)  | `{colors.surface-1}` background on canvas, 1px `{colors.hairline}` | Default cards, product panels            |
-| 2 (surface-2 lift) | `{colors.surface-2}` background, 1px `{colors.hairline-strong}`    | Featured pricing card, hovered cards     |
-| 3 (surface-3 lift) | `{colors.surface-3}` background                                    | Sub-nav, dropdown menus                  |
-| 4 (focus ring)     | 2px `{colors.primary-focus}` outline at 50% opacity                | Focused input, focused button            |
+| Bậc | Xử lý                                    | Dùng cho                        |
+| --- | ---------------------------------------- | ------------------------------- |
+| 0   | Không viền, không nền                    | Chữ trên canvas                 |
+| 1   | `surface-1` + viền 1px `hairline`        | Panel, sidebar, card            |
+| 2   | `surface-2` + viền 1px `hairline-strong` | Panel lồng, popover, hàng hover |
+| 3   | `surface-3` (light) / `surface-4` (dark) | Dòng đang hover, mục đang chọn  |
+| 4   | Ring 2px `ring` ở 50% (`ring-2`)         | Phần tử đang focus              |
 
-Linear's depth is carried by surface ladder + hairline borders. The brand resists drop shadows on dark almost entirely.
+**Bậc 0 đến 4 là các lớp NẰM TRONG luồng bản ghi và không đổ bóng.** Chiều sâu do thang surface và viền hairline tạo ra. Popover, dropdown, tooltip, dialog, sheet không nằm trong thang này - chúng là lớp nổi, xem mục ngay dưới.
 
-### Decorative Depth
+### Lớp nổi là ngoại lệ duy nhất
 
-- **Product UI screenshots** dominate as decorative depth.
-- **No atmospheric gradients, no spotlight cards.**
-- **Subtle white edge highlight** on the top edge of lifted panels — gives the dark surface a faint "pixel rendered" feel.
+Popover, dropdown, tooltip, dialog, sheet, command không nằm trong luồng bản ghi, chúng nổi lên trên nó. Trên canvas trắng thì một đường viền 1px không đủ nói rằng lớp đó ở trên, nên đây là chỗ duy nhất được đổ bóng.
+
+Bóng nhuộm theo hue của mực (`--shadow-rgb: 11 18 32` ở light) chứ không dùng đen thuần, và rất tiết chế. Thang `--shadow-*` khai trong `globals.scss` đè lên thang mặc định của Tailwind, nên các class `shadow-md` / `shadow-lg` / `shadow-xl` có sẵn trong file shadcn tự nhận đúng giá trị này.
+
+Ở dark, bóng nhuộm màu gần như vô hình nên chuyển sang đen thuần và tăng cường độ (`--shadow-strength: 2.5`).
+
+**Đừng dùng `shadow-*` ngoài lớp nổi.** Card, panel, stat tile, hàng bảng đều phân cấp bằng surface và hairline.
 
 ## Shapes
 
-### Border Radius Scale
+Một hệ bo góc duy nhất, áp dụng khắp nơi:
 
-| Token            | Value  | Use                                             |
-| ---------------- | ------ | ----------------------------------------------- |
-| `{rounded.xs}`   | 4px    | Small chips, status badges                      |
-| `{rounded.sm}`   | 6px    | Inline tags                                     |
-| `{rounded.md}`   | 8px    | All buttons, form inputs                        |
-| `{rounded.lg}`   | 12px   | Pricing cards, feature cards, testimonial cards |
-| `{rounded.xl}`   | 16px   | Product screenshot panels                       |
-| `{rounded.xxl}`  | 24px   | Oversized CTA banners (rare)                    |
-| `{rounded.pill}` | 9999px | Pricing tab toggles, status pills               |
-| `{rounded.full}` | 9999px | Avatar circles                                  |
+| Token            | Value  | Dùng cho                       |
+| ---------------- | ------ | ------------------------------ |
+| `{rounded.2xs}`  | 2px    | Ô màu nhỏ dưới 12px            |
+| `{rounded.xs}`   | 4px    | Hàng bảng, chip nhỏ            |
+| `{rounded.sm}`   | 6px    | Status badge, tag              |
+| `{rounded.md}`   | 8px    | **Mọi nút, mọi input**         |
+| `{rounded.lg}`   | 12px   | Panel, card, stat tile         |
+| `{rounded.xl}`   | 16px   | Panel lớn, khung xem bản ghi   |
+| `{rounded.pill}` | 9999px | **Chỉ** node stepper và avatar |
 
-### Photography & Illustration Geometry
+**Không bo pill cho nút.** Nút luôn `{rounded.md}` 8px.
 
-- Product UI screenshots dominate; they sit in `{rounded.xl}` 16px tiles with `{spacing.lg}` 24px outer padding.
-- Customer logo tiles render at small sizes (~24px logo height) on `{colors.canvas}` with no border.
-- Avatar circles in testimonial cards use `{rounded.full}` at 32–40px sizes.
+## Responsive
 
-## Components
+| Tên        | Width  | Thay đổi chính                                        |
+| ---------- | ------ | ----------------------------------------------------- |
+| Desktop-XL | 1440px | Bố cục đầy đủ, sidebar mở                             |
+| Desktop    | 1280px | Sidebar mở, bảng đủ cột                               |
+| Tablet     | 1024px | Sidebar thu thành icon, bảng ẩn cột phụ               |
+| Mobile-Lg  | 768px  | Sidebar thành sheet, stepper ngang → dọc, bảng → card |
+| Mobile     | 480px  | Một cột, stat tile xếp dọc, display-lg → headline     |
 
-### Buttons
+**Mỗi layout nhiều cột phải khai rõ cách sập ở `< 768px` ngay trong component**, không giả định Tailwind tự lo.
 
-**`button-primary`** — Lavender CTA. The default primary CTA across all pages.
-
-- Background `{colors.primary}`, text `{colors.on-primary}`, type `{typography.button}`, padding 8px 14px, rounded `{rounded.md}`.
-- Pressed state lives in `button-primary-pressed` (background shifts to `{colors.primary-focus}`).
-- Hover state lives in `button-primary-hover` (background shifts to `{colors.primary-hover}` lighter lavender).
-
-**`button-secondary`** — Charcoal button. Used for secondary CTAs ("Sign in", "Read changelog").
-
-- Background `{colors.surface-1}`, text `{colors.ink}`, type `{typography.button}`, padding 8px 14px, rounded `{rounded.md}`. 1px `{colors.hairline}` border.
-
-**`button-tertiary`** — Plain text button.
-
-- Background `{colors.canvas}`, text `{colors.ink}`, type `{typography.button}`, rounded `{rounded.md}`, padding 8px 14px.
-
-**`button-inverse`** — White-on-dark inverse CTA.
-
-- Background `{colors.inverse-canvas}`, text `{colors.inverse-ink}`, type `{typography.button}`, rounded `{rounded.md}`, padding 8px 14px.
-
-### Pricing Tabs
-
-**`pricing-tab-default`** + **`pricing-tab-selected`** — Pill-toggle on `/pricing`.
-
-- Default: `{colors.canvas}` background, `{colors.ink-subtle}` text, rounded `{rounded.pill}`, padding 6px 14px.
-- Selected: `{colors.surface-2}` background, `{colors.ink}` text — selected = surface lift.
-
-### Cards & Containers
-
-**`pricing-card`** — Each tier on `/pricing`.
-
-- Background `{colors.surface-1}`, text `{colors.ink}`, type `{typography.body}`, rounded `{rounded.lg}`, padding 24px. 1px `{colors.hairline}` border.
-
-**`pricing-card-featured`** — Recommended tier — surface lift to surface-2.
-
-- Background `{colors.surface-2}`, otherwise identical structure.
-
-**`feature-card`** — Generic feature highlight tile.
-
-- Background `{colors.surface-1}`, text `{colors.ink}`, type `{typography.body}`, rounded `{rounded.lg}`, padding 24px.
-
-**`product-screenshot-card`** — The dominant card type — frames a high-fidelity Linear app UI screenshot.
-
-- Background `{colors.surface-1}`, text `{colors.ink}`, type `{typography.body}`, rounded `{rounded.xl}`, padding 24px.
-
-**`testimonial-card`** — Customer quote with avatar + name + role.
-
-- Background `{colors.surface-1}`, text `{colors.ink}`, type `{typography.body-lg}`, rounded `{rounded.lg}`, padding 32px.
-
-**`customer-logo-tile`** — Small tile in the customer marquee.
-
-- Background `{colors.canvas}`, text `{colors.ink-subtle}`, type `{typography.caption}`, rounded `{rounded.xs}`, padding 16px.
-
-**`cta-banner`** — Closing CTA panel near page bottom.
-
-- Background `{colors.surface-1}`, text `{colors.ink}`, type `{typography.headline}`, rounded `{rounded.lg}`, padding 48px.
-
-### Inputs & Forms
-
-**`text-input`** + **`text-input-focused`** — Form fields on `/contact/sales` and signup overlays.
-
-- Background `{colors.surface-1}`, text `{colors.ink}`, type `{typography.body}`, rounded `{rounded.md}`, padding 8px 12px.
-- Focused state retains the same surface; the focus ring is a 2px `{colors.primary-focus}` outline at 50% opacity.
-
-### Status & Build Page
-
-**`changelog-row`** — Each row in `/build` (changelog page) listing version, date, and changes.
-
-- Background `{colors.canvas}`, text `{colors.ink}`, type `{typography.body}`, rounded `{rounded.xs}`, padding 24px 0. 1px `{colors.hairline}` bottom rule.
-
-**`status-badge`** — Small status pill.
-
-- Background `{colors.surface-2}`, text `{colors.ink-muted}`, type `{typography.caption}`, rounded `{rounded.pill}`, padding 2px 8px.
-
-### Navigation
-
-**`top-nav`** — Sticky dark bar with the Linear wordmark left, primary nav links centered, and a `button-secondary` ("Sign in") + `button-primary` ("Get started") pair right.
-
-- Background `{colors.canvas}`, text `{colors.ink}`, type `{typography.body-sm}`, height 56px.
-
-### Footer
-
-**`footer`** — Dense link grid on `{colors.canvas}` with the Linear wordmark left.
-
-- Background `{colors.canvas}`, text `{colors.ink-subtle}`, type `{typography.caption}`, padding 64px 32px.
+**Vùng chạm.** Thang chiều cao của điều khiển (24 / 28 / 32 / 36px) là thang cho chuột, đúng với mật độ của ứng dụng nghiệp vụ. Trên thiết bị trỏ thô, `globals.scss` nâng nút và các ô nhập (6 data-slot liệt kê trong file) lên tối thiểu 44px qua `@media (pointer: coarse)`, nên KHÔNG ép chiều cao bằng tay trong code.
 
 ## Do's and Don'ts
 
 ### Do
 
-- Reserve `{colors.canvas}` (#010102) as the system's anchor surface — the faint blue tint is intentional.
-- Use `{colors.primary}` lavender ONLY for: brand mark, primary CTA, focus ring, link emphasis.
-- Use the four-step surface ladder for hierarchy. Avoid skipping levels.
-- Pair display weight 600 with body weight 400 — Linear resists 700+ display weights.
-- Apply negative letter-spacing aggressively on display.
-- Use product UI screenshots as the protagonist of every section.
-- Compose CTAs as `{rounded.md}` 8px corners.
+- Giữ navy cho nút chính, focus ring, node stepper đã xong và chart slot 1, mỗi vai trò một bậc trong cùng thang
+- Phân cấp bằng thang surface và hairline 1px
+- Dùng mono cho mọi chuỗi do máy sinh, sans cho mọi chuỗi do người viết
+- Đặt `.numeric` lên mọi cột số
+- Kèm nhãn chữ cho mọi màu semantic
+- Định nghĩa màu mới cho **cả hai** theme cùng lúc
+- Kiểm tra tương phản trước khi thêm bất kỳ cặp màu nào
 
 ### Don't
 
-- Don't ship a light-mode marketing page.
-- Don't use lavender as a section background or card fill.
-- Don't introduce a second chromatic accent (orange, pink, green for marketing).
-- Don't add atmospheric gradients or spotlight cards.
-- Don't pill-round CTAs.
-- Don't use `#000000` true black as the canvas.
-- Don't combine multiple bright accents in product screenshot mockups.
+- Đừng dùng navy làm nền section hay fill card
+- Đừng thêm accent thứ hai ngoài bộ semantic bốn màu đã định
+- Đừng dùng opacity trên chữ để tạo phân cấp
+- Đừng đổ bóng lên bề mặt nằm trong luồng (card, panel, tile)
+- Đừng bo pill cho nút
+- Đừng để một khối lật sang theme ngược với phần còn lại của trang
+- Đừng dùng màu semantic cho series biểu đồ
+- Đừng để biểu đồ light mode dùng chart-3/4/5 mà thiếu nhãn trực tiếp
+- Đừng thêm animation không trả lời được "nó truyền đạt cái gì"
 
-## Responsive Behavior
+## Hoà giải với shadcn
 
-### Breakpoints
+`src/components/ui/` do `npx shadcn add` sinh ra và mặc định của nó không khớp hệ này. Có hai cách chữa, và **ưu tiên cách thứ nhất**.
 
-| Name       | Width  | Key Changes                                         |
-| ---------- | ------ | --------------------------------------------------- |
-| Desktop-XL | 1440px | Default desktop layout                              |
-| Desktop    | 1280px | Card grid 3-up maintained                           |
-| Tablet     | 1024px | Card grid 3-up → 2-up                               |
-| Mobile-Lg  | 768px  | Pricing comparison becomes accordion; nav hamburger |
-| Mobile     | 480px  | Single-column; display-xl scales 80px → ~36px       |
+### Cách 1 (ưu tiên): đè ở tầng token, không sửa file
 
-### Touch Targets
+Phần lớn lệch lạc chữa được bằng cách định nghĩa lại token trong `@theme` của `globals.scss`. Cách này không đụng file nào nên `shadcn add` chạy lại vẫn an toàn.
 
-- CTAs hold ≥40px tap height across viewports.
-- Pricing tab pills hold ≥36px tap height; touch viewports grow to ≥44px.
-- Form inputs hold ≥44px tap target on touch.
+| Vấn đề                                                                      | Cách chữa                                                                                                                |
+| --------------------------------------------------------------------------- | ------------------------------------------------------------------------------------------------------------------------ |
+| 43 file dùng `text-sm` / `text-xs` / `text-2xl`…                            | 5 trong 8 bậc của Tailwind đã trùng thang này sẵn. Chỉnh 3 bậc lệch (`lg`, `3xl`, `4xl`) là cả 43 file tự rơi đúng thang |
+| `tracking-tight` / `tracking-widest` cho ra số thập phân                    | Ánh xạ toàn bộ `--tracking-*` về ba giá trị -1px / 0 / +1px                                                              |
+| `shadow-md` / `shadow-lg` / `shadow-xl` mặc định quá nặng và dùng đen thuần | Định nghĩa lại thang `--shadow-*` thành bóng nhuộm theo hue của mực, rất tiết chế                                        |
+| Điều khiển cao 24-36px, nhỏ hơn ngưỡng chạm 44px                            | Một khối `@media (pointer: coarse)` trong `@layer base` nâng min-height, không cần sửa component                         |
 
-### Collapsing Strategy
+### Luật số: không có số lẻ, không có số thập phân
 
-- **Top nav**: links collapse to hamburger below 768px.
-- **Card grids**: 3-up → 2-up at 1024px → 1-up below 768px.
-- **Pricing comparison**: per-tier accordion below 768px.
-- **Display type**: `{typography.display-xl}` 80px scales toward `{typography.display-md}` 40px on mobile.
+Áp cho **cả** code của app lẫn `src/components/ui/`. Bản shadcn sinh ra vi phạm ở khá nhiều chỗ và đã được dọn:
 
-### Image Behavior
+| Giá trị cũ                                              | Ở đâu                                      | Đổi thành                                                                  |
+| ------------------------------------------------------- | ------------------------------------------ | -------------------------------------------------------------------------- |
+| `ring-[3px]` và `ring-3`                                | 21 file, focus ring                        | `ring-2` (2px, vẫn đạt WCAG 2.2, và là chuẩn của Material, Fluent, Primer) |
+| `h-[18.4px]`                                            | `switch.tsx`, chiều cao track              | `h-4.5` (18px), phép tính `translate-x` giữ nguyên                         |
+| `text-[0.8rem]` (12.8px)                                | `button.tsx`, `toggle.tsx`, `calendar.tsx` | `text-xs` (12px)                                                           |
+| `p-[3px]`                                               | `tabs.tsx`, `menubar.tsx`                  | `p-1` (4px)                                                                |
+| `bottom-[-5px]`                                         | `tabs.tsx`, offset indicator               | `-bottom-1` (-4px)                                                         |
+| `border-[1.5px]`                                        | `chart.tsx`, indicator dashed              | `border-2`                                                                 |
+| `ml-[-0.3rem]` (-4.8px), `ml-[-0.15rem]` (-2.4px)       | `input-group.tsx`                          | `-ml-1`, `-ml-0.5`                                                         |
+| `rounded-[2px]`, `rounded-[4px]`, `w-[2px]`, `py-[2px]` | nhiều file                                 | Đưa về token `rounded-2xs`, `rounded-xs`, `w-0.5`, `py-0.5`                |
 
-- Product UI screenshots maintain aspect ratio and never crop.
-- Customer logos in the marquee may collapse from 6-up to 3-up below 768px.
+Sau khi dọn, mọi giá trị px tuỳ ý còn lại trong `src/` đều là bội số của 4: `1400` (container), `100` (tay cầm drawer), `96` (bề rộng tối thiểu dropdown).
 
-## Iteration Guide
+**Cách kiểm tra lại sau này** (lệnh này KHÔNG bắt được px nằm trong `calc()` hay `min()` - hiện còn 7px và 9px trong `input-group.tsx` do dẫn xuất từ `--radius`):
 
-1. Focus on ONE component at a time and reference it by its `components:` token name.
-2. When introducing a section, decide first which surface lift it lives on.
-3. Default body to `{typography.body}` at weight 400.
-4. Run `npx @google/design.md lint DESIGN.md` after edits.
-5. Add new variants as separate component entries.
-6. Treat lavender as scarce: brand mark, primary CTA, focus, link emphasis.
-7. Lead every section with a product UI screenshot.
+```bash
+# Bắt số lẻ và số thập phân trong mọi giá trị tuỳ ý
+grep -rnoE '\[-?[0-9]*[13579]px\]|\[-?[0-9]+\.[0-9]+px\]|\[-?[0-9.]+(rem|em)\]' src/
+```
 
-## Known Gaps
+### Cách 2: sửa tay, chỉ khi cách 1 bất khả
 
-- The four-step surface ladder values are extracted directly from Linear's `--color-bg-level-3`, `--color-line-tint`, etc. CSS variables; they are Linear's canonical surface spec.
-- Form-field error and validation styling is not visible on the inspected pages.
-- Light mode is not documented because the marketing site does not ship a light theme.
-- Linear's actual product UI uses a richer color-tag palette (red, orange, yellow, green, blue, purple) for issue priorities and project labels — those colors live in the in-product surfaces shown in mockups.
-- The custom display, text, and mono families are proprietary; an open-source substitute is acceptable.
+Bo góc không chữa được ở tầng token vì shadcn dùng `rounded-lg` cho **cả** điều khiển lẫn panel, mà hệ này quy định 8px cho điều khiển và 12px cho panel. Nên các file sau đã sửa tay:
+
+| File                                                                                                                         | Sửa gì                                           | Vì sao                                                                          |
+| ---------------------------------------------------------------------------------------------------------------------------- | ------------------------------------------------ | ------------------------------------------------------------------------------- |
+| `button.tsx`                                                                                                                 | `rounded-lg` → `rounded-md` (5 chỗ)              | Nút phải bo 8px                                                                 |
+| `button.tsx`                                                                                                                 | `hover:bg-primary/80` → `hover:bg-primary-hover` | Bản mặc định chỉ giảm opacity nên nút lẫn vào nền thay vì đổi bậc navy          |
+| `input.tsx` · `textarea.tsx` · `native-select.tsx` · `toggle.tsx` · `toggle-group.tsx` · `input-otp.tsx` · `input-group.tsx` | `rounded-lg` → `rounded-md`                      | Cùng lý do                                                                      |
+| `select.tsx`                                                                                                                 | `rounded-lg` → `rounded-md` **chỉ ở trigger**    | Trigger là điều khiển (8px), content là panel nên giữ 12px                      |
+| `combobox.tsx`                                                                                                               | `rounded-lg` → `rounded-md` **chỉ ở trigger**    | Cùng lý do                                                                      |
+| `empty.tsx`                                                                                                                  | `text-sm/relaxed` → `text-sm`                    | `/relaxed` cho line-height 22.75px, lệch khỏi lưới 4px                          |
+| `badge.tsx`                                                                                                                  | `rounded-4xl` → `rounded-sm`                     | Bo 40px biến badge thành hình pill, mà pill chỉ dành cho node stepper và avatar |
+| `button.tsx` · `badge.tsx` · `empty.tsx` · `field.tsx` · `item.tsx`                                                          | `text-primary` → `text-primary-text`             | Primary làm chữ ở dark chỉ đạt 3.4:1, trượt AA                                  |
+| 21 file (focus ring)                                                                                                         | `ring-3` và `ring-[3px]` → `ring-2`              | 3 là số lẻ; 2px là chuẩn công nghiệp và vẫn đạt WCAG 2.2                        |
+
+⚠️ **Chạy lại `npx shadcn add <tên>` sẽ ghi đè các sửa đổi trên.** Sau mỗi lần thêm component mới, kiểm lại bảng này và áp lại phần liên quan.
+
+## Known gaps
+
+- **Chưa dựng:** xác thực, danh sách và chi tiết bản ghi - đó là việc của từng dự án dẫn xuất. Token và quy tắc ở đây đã sẵn cho chúng.
+- **Chưa quyết:** cách phân trang bảng dữ liệu lớn.
+- **Chưa có bản ghi:** trạng thái lỗi của form nhiều bước khi người dùng quay lại bước trước.
+- Biểu đồ mới có bản mẫu ở `/design`; chưa tách thành component tái sử dụng.

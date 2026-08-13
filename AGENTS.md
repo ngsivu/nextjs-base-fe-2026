@@ -78,6 +78,7 @@ Luật rút gọn (chi tiết xem mục Do's and Don'ts trong DESIGN.md):
 - **Không thêm accent thứ hai** ngoài bộ semantic 4 màu (`success` / `warning` / `danger` / `info`).
 - **Semantic chỉ cho trạng thái nghiệp vụ thật**, luôn kèm nhãn chữ hoặc icon — không bao giờ để màu đứng một mình. Không dùng semantic cho series biểu đồ.
 - Phân cấp bằng **thang surface** (canvas → surface-1 → 2 → 3) và viền hairline 1px. **Không đổ bóng lên bề mặt trong luồng**; lớp nổi (popover, dropdown, tooltip, dialog) là ngoại lệ duy nhất.
+- **Cạnh của điều khiển dùng `--control-edge`, không dùng `--border`.** Hairline chỉ chia vùng (1.3:1) nên nút dùng nó sẽ tàng hình; `--control-edge` đạt 3:1 theo WCAG 1.4.11. Riêng `ghost` và `link` cố ý không có cạnh.
 - **Không bo tròn dạng pill cho nút** — button dùng `rounded-md` (8px), card `rounded-lg` (12px). Pill chỉ dành cho node stepper và avatar.
 - Body mặc định **14px**, không phải 16px — đây là app nghiệp vụ, không phải trang marketing.
 - **Mono cho chuỗi do máy sinh** (mã bản ghi, ID, timestamp, hash), sans cho chuỗi do người viết. Mọi cột số đặt class `.numeric`.

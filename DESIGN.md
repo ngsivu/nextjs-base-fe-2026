@@ -35,6 +35,7 @@ colors:
     ink-subtle: '#5b6679'
     hairline: '#dde3ed'
     hairline-strong: '#c3ccdb'
+    control-edge: '#7d8899'
     hairline-tertiary: '#eaeef5'
     dark-primary: '#3a65bb'
     dark-primary-hover: '#446fc5'
@@ -51,6 +52,7 @@ colors:
     dark-ink-subtle: '#8794ac'
     dark-hairline: '#273249'
     dark-hairline-strong: '#374562'
+    dark-control-edge: '#5b6883'
     dark-hairline-tertiary: '#1e2740'
     success: '#15683f'
     success-subtle: '#e3f3ea'
@@ -165,12 +167,14 @@ components:
         rounded: '{rounded.md}'
     button-secondary:
         backgroundColor: '{colors.surface-2}'
+        borderColor: '{colors.control-edge}'
         textColor: '{colors.ink}'
         typography: '{typography.body}'
         rounded: '{rounded.md}'
         padding: 8px 14px
     button-outline:
         backgroundColor: '{colors.canvas}'
+        borderColor: '{colors.control-edge}'
         textColor: '{colors.ink}'
         typography: '{typography.body}'
         rounded: '{rounded.md}'
@@ -274,6 +278,7 @@ components:
 > | `primary-active`                          | `--primary-active`                                |
 > | `primary-focus`                           | `--ring`                                          |
 > | `hairline`                                | `--border`                                        |
+> | `control-edge`                            | `--control-edge` (cạnh của điều khiển)            |
 > | `hairline-strong`                         | `--hairline-strong`, `--input`                    |
 > | `hairline-tertiary`                       | `--hairline-tertiary`                             |
 > | `success` / `warning` / `danger` / `info` | `--success` … `--info` + `-foreground`, `-subtle` |
@@ -537,6 +542,23 @@ Một bộ bản ghi đi qua nhiều bước và nhiều vòng xử lý. Ngườ
 | 4   | Ring 2px `ring` ở 50% (`ring-2`)         | Phần tử đang focus              |
 
 **Bậc 0 đến 4 là các lớp NẰM TRONG luồng bản ghi và không đổ bóng.** Chiều sâu do thang surface và viền hairline tạo ra. Popover, dropdown, tooltip, dialog, sheet không nằm trong thang này - chúng là lớp nổi, xem mục ngay dưới.
+
+### Cạnh của điều khiển khác cạnh chia vùng
+
+`--border` (hairline) chỉ có nhiệm vụ **chia vùng**, nên nó mờ là đúng: 1.3:1 với nền. Nhưng một cái nút thì cần cạnh nói được "thứ này bấm được", và WCAG 1.4.11 yêu cầu ranh giới của component đạt **3:1**.
+
+Đo bản shadcn gốc: `secondary` chỉ đạt **1.13:1**, `outline` **1.29:1**, `destructive` **1.25:1** - nghĩa là chúng chỉ nhận ra được nhờ chữ bên trong, còn hình dáng nút thì gần như tàng hình trên nền sáng.
+
+Nên có token riêng `--control-edge`, đậm hơn hairline:
+
+|                                    | Light                 | Dark                  |
+| ---------------------------------- | --------------------- | --------------------- |
+| `--border` (chia vùng)             | `#dde3ed` · 1.3:1     | `#273249`             |
+| `--control-edge` (cạnh điều khiển) | `#7d8899` · **3.6:1** | `#5b6883` · **3.5:1** |
+
+Áp cho `secondary` và `outline`. `destructive` dùng `border-destructive/60` để cạnh mang đúng màu cảnh báo mà vẫn đạt 3.2:1.
+
+**`ghost` và `link` cố ý KHÔNG có cạnh.** Chúng sống trong thanh công cụ và hàng bảng, nơi ngữ cảnh xung quanh đã nói chúng bấm được. Thêm cạnh cho hai variant này là hiểu sai công dụng của chúng.
 
 ### Lớp nổi là ngoại lệ duy nhất
 

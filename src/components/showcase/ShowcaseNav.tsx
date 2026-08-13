@@ -68,7 +68,7 @@ export function ShowcaseNav({ groups }: { groups: NavGroup[] }) {
 				</p>
 			</div>
 
-			<div className="-mr-2 pr-2 flex-1 overflow-y-auto">
+			<div className="no-scrollbar -mr-2 pr-2 flex-1 overflow-y-auto">
 				{filtered.map((group) => (
 					<div key={group.id} className="mb-6">
 						<p className="mb-2 text-eyebrow text-muted-foreground uppercase">{group.title}</p>

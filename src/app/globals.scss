@@ -185,6 +185,9 @@
 	--color-primary-active: var(--primary-active);
 	--color-ink-muted: var(--ink-muted);
 	--color-hairline-strong: var(--hairline-strong);
+	/* Cạnh của ĐIỀU KHIỂN. Đậm hơn hairline vì hairline chỉ chia vùng, còn cạnh
+	   này phải nói được "thứ này bấm được": đạt 3:1 với nền theo WCAG 1.4.11. */
+	--color-control-edge: var(--control-edge);
 	--color-hairline-tertiary: var(--hairline-tertiary);
 	/* Bộ semantic cho trạng thái nghiệp vụ — xem DESIGN.md § Semantic */
 	--color-success: var(--success);
@@ -242,6 +245,7 @@
 	--ink-muted: #3a4356; /* text cấp 2 — 9.9:1 trên canvas */
 	--hairline-strong: #c3ccdb;
 	--hairline-tertiary: #eaeef5;
+	--control-edge: #7d8899; /* 3.6:1 trên canvas trắng */
 
 	/* Semantic — chỉ dùng cho trạng thái nghiệp vụ thật, không trang trí */
 	--success: #15683f;
@@ -327,6 +331,7 @@
 	--ink-muted: #c3ccdd; /* text cấp 2 trên panel */
 	--hairline-strong: #374562;
 	--hairline-tertiary: #1e2740;
+	--control-edge: #5b6883; /* 3.5:1 trên canvas tối */
 
 	--success: #4fbe84;
 	--success-foreground: #06170f;
@@ -456,6 +461,20 @@ $spinner-duration: 0.7s;
 @keyframes splash-spin {
 	to {
 		transform: rotate(360deg);
+	}
+}
+
+// ── Ẩn thanh cuộn nhưng vẫn cuộn được ──────────────────────────
+// CHỈ dùng cho vùng mà bản thân nội dung đã nói rõ là còn tiếp (danh sách
+// điều hướng dài). Đừng dùng cho vùng nội dung chính: bỏ thanh cuộn ở đó là
+// lấy mất tín hiệu duy nhất báo cho người dùng biết bên dưới còn gì.
+.no-scrollbar {
+	/* Firefox */
+	scrollbar-width: none;
+
+	/* Chromium, Safari */
+	&::-webkit-scrollbar {
+		display: none;
 	}
 }
 

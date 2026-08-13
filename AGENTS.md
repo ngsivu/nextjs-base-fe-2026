@@ -2,7 +2,10 @@
 
 # This is NOT the Next.js you know
 
-This version has breaking changes — APIs, conventions, and file structure may all differ from your training data. Read the relevant guide in `node_modules/next/dist/docs/` before writing any code. Heed deprecation notices.
+This version has breaking changes — APIs, conventions, and file structure may all differ from your training data. Read the relevant guide in `node_modules/next/dist/docs/` (resolved from this file's directory; in monorepos the `next` package may not be visible from the repo root) before writing any code. Heed deprecation notices.
+
+This block is written and re-added by `next dev` — verify at `node_modules/next/dist/server/lib/generate-agent-files.js`. Removing it from a diff only re-creates the uncommitted change; committing it with your work keeps the tree clean.
+
 <!-- END:nextjs-agent-rules -->
 
 # Base FE
@@ -280,7 +283,21 @@ Không `await` lời gọi invalidate — để mutation trả kết quả ngay,
 
 **13. KHÔNG khai báo `--spacing-<tên chữ>` trong `@theme`.** Tailwind v4 dùng namespace `--spacing-*` cho **mọi** utility cùng tên, không riêng `p-*`/`m-*`. Khai `--spacing-md: 16px` sẽ biến `max-w-md` từ 448px thành 16px, kéo theo `Dialog`, `Sheet`, `Drawer`, `Tooltip` co lại còn vài pixel — và E2E vẫn pass vì Playwright thao tác qua DOM, không kiểm tra kích thước. Spacing scale của DESIGN.md đều là bội số 4 nên dùng thẳng scale số của Tailwind: `4px=1 · 8px=2 · 12px=3 · 16px=4 · 24px=6 · 32px=8 · 48px=12 · 96px=24`.
 
-**14. Next 16 chỉ cho phép MỘT dev server mỗi thư mục.** Chạy `next dev` lần hai trong cùng repo sẽ bị chặn kể cả khi khác port (`Another next dev server is already running`). Vì vậy `pnpm test:e2e` sẽ fail nếu đang có `pnpm dev` chạy — tắt dev server trước khi chạy E2E.
+**14. Next chỉ cho phép MỘT dev server mỗi THƯ MỤC — khoá theo thư mục, không theo port.** Kiểm chứng lại trên 16.3.0: `next dev` lần hai trong cùng repo bị chặn với `Another next dev server is already running`, kèm dòng `Dir:` chỉ đúng thư mục đang giữ khoá. Đổi port **không** giúp gì; nhưng hai repo khác nhau thì chạy song song thoải mái.
+
+```
+/Users/…/base-fe          → next dev -p 3002  ✅   next dev -p 3010  ❌ cùng thư mục
+/Users/…/valuation-fe     → next dev -p 3000  ✅   khác thư mục
+```
+
+Lý do: `next dev` giữ cache Turbopack trong `.next/` của thư mục đó, hai process cùng ghi sẽ hỏng cache.
+
+Hệ quả: `pnpm test:e2e` tự khởi dev server riêng nên **luôn** fail khi `pnpm dev` của repo này đang chạy. Hai lối thoát:
+
+- Tắt `pnpm dev` rồi chạy `pnpm test:e2e` (server sạch, độc lập).
+- Hoặc `E2E_PORT=<port> pnpm test:e2e:reuse` — chạy vào server đang mở, không tự khởi gì cả.
+
+⚠️ Chế độ `reuse` test đúng trạng thái của server đó. Sau khi `pnpm install` đổi `node_modules`, dev server đang chạy sẽ trỏ vào thư mục pnpm cũ đã biến mất (`Could not find the module ".../lucide-react@…_react@19.2.7/…" in the React Client Manifest`) và cho fail sai lệch — **khởi động lại dev server sau mỗi lần `pnpm install`** trước khi tin kết quả.
 
 **15. cmdk (`Command`) tự `scrollIntoView` khi mount.** Render `Command` ở dạng inline sẽ khiến trình duyệt cuộn tới item đang chọn — trang dài bị nhảy thẳng xuống giữa. Chỉ render `Command` khi người dùng yêu cầu (nút bấm), hoặc dùng `CommandDialog`.
 
